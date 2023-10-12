@@ -44,28 +44,28 @@ class NumberScreen extends StatelessWidget {
                               child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Container(
-                                        width: 82.h,
-                                        child: CustomImageView(
-                                            svgPath: ImageConstant.imgArrowdown,
-                                            height: 24.adaptSize,
-                                            width: 24.adaptSize,
-                                            margin: EdgeInsets.only(left: 58.h),
-                                            child: Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                    vertical: 3.v),
-                                                child: Text("lbl_254".tr,
-                                                    style: theme
-                                                        .textTheme.bodyMedium,
-                                                    child: CustomImageView(
-                                                        imagePath: ImageConstant
-                                                            .imgKenyanflag1,
-                                                        height: 19.v,
-                                                        width: 22.h,
-                                                        margin: EdgeInsets.only(
-                                                            top: 2.v,
-                                                            right: 60.h,
-                                                            bottom: 3.v)))))),
+                                    // Container(
+                                    //     width: 82.h,
+                                    //     child: CustomImageView(
+                                    //         svgPath: ImageConstant.imgArrowdown,
+                                    //         height: 24.adaptSize,
+                                    //         width: 24.adaptSize,
+                                    //         margin: EdgeInsets.only(left: 58.h),
+                                    //         child: Padding(
+                                    //             padding: EdgeInsets.symmetric(
+                                    //                 vertical: 3.v),
+                                    //             child: Text("lbl_254".tr,
+                                    //                 style: theme
+                                    //                     .textTheme.bodyMedium,
+                                    //                 child: CustomImageView(
+                                    //                     imagePath: ImageConstant
+                                    //                         .imgKenyanflag1,
+                                    //                     height: 19.v,
+                                    //                     width: 22.h,
+                                    //                     margin: EdgeInsets.only(
+                                    //                         top: 2.v,
+                                    //                         right: 60.h,
+                                    //                         bottom: 3.v)))))),
                                     Padding(
                                         padding: EdgeInsets.only(left: 10.h),
                                         child: SizedBox(
