@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/presentation/main_page/main_page.dart';
-import 'package:kenny_s_application1/presentation/matches_page/matches_page.dart';
-import 'package:kenny_s_application1/presentation/messages_page/messages_page.dart';
-import 'package:kenny_s_application1/widgets/custom_bottom_bar.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/presentation/main_page/main_page.dart';
+import 'package:hlove/presentation/matches_page/matches_page.dart';
+import 'package:hlove/widgets/custom_bottom_bar.dart';
 
 class SwipeLeftScreen extends StatelessWidget {
   SwipeLeftScreen({Key? key})
@@ -28,7 +27,7 @@ class SwipeLeftScreen extends StatelessWidget {
             color: theme.colorScheme.onPrimary.withOpacity(1),
             image: DecorationImage(
               image: AssetImage(
-                ImageConstant.imgGroup223,
+                ImageConstant.imgGroup141,
               ),
               fit: BoxFit.cover,
             ),
@@ -84,7 +83,7 @@ class SwipeLeftScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               children: [
                                 CustomImageView(
-                                  svgPath: ImageConstant.imgFavoritePrimary,
+                                  svgPath: ImageConstant.imgFavorite,
                                   height: 50.adaptSize,
                                   width: 50.adaptSize,
                                   alignment: Alignment.center,
@@ -109,7 +108,7 @@ class SwipeLeftScreen extends StatelessWidget {
                     elevation: 0,
                     margin: EdgeInsets.only(
                       right: 14.h,
-                      bottom: 5.v,
+                      bottom: 27.v,
                     ),
                     color: appTheme.black900,
                     shape: RoundedRectangleBorder(
@@ -163,7 +162,7 @@ class SwipeLeftScreen extends StatelessWidget {
                                         width: 235.h,
                                         child: Text(
                                           "msg_samuel_odhiambo".tr,
-                                          maxLines: 2,
+                                          maxLines: 3,
                                           overflow: TextOverflow.ellipsis,
                                           style: CustomTextStyles
                                               .headlineSmallOnPrimary
@@ -203,6 +202,184 @@ class SwipeLeftScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: SizedBox(
+                    height: 520.v,
+                    width: 360.h,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        CustomImageView(
+                          imagePath: ImageConstant.imgPhoto511x360,
+                          height: 511.v,
+                          width: 360.h,
+                          radius: BorderRadius.circular(
+                            15.h,
+                          ),
+                          alignment: Alignment.center,
+                        ),
+                        Align(
+                          alignment: Alignment.center,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 42.h,
+                              vertical: 197.v,
+                            ),
+                            decoration: AppDecoration.fillBlack.copyWith(
+                              borderRadius: BorderRadiusStyle.roundedBorder15,
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(height: 18.v),
+                                Card(
+                                  clipBehavior: Clip.antiAlias,
+                                  elevation: 0,
+                                  color: theme.colorScheme.onPrimary
+                                      .withOpacity(1),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadiusStyle.roundedBorder49,
+                                  ),
+                                  child: Container(
+                                    height: 97.adaptSize,
+                                    width: 97.adaptSize,
+                                    padding: EdgeInsets.all(1.h),
+                                    decoration:
+                                        AppDecoration.outlineBlack.copyWith(
+                                      borderRadius:
+                                          BorderRadiusStyle.roundedBorder49,
+                                    ),
+                                    child: Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        CustomImageView(
+                                          svgPath: ImageConstant.imgFavorite,
+                                          height: 50.adaptSize,
+                                          width: 50.adaptSize,
+                                          alignment: Alignment.center,
+                                        ),
+                                        CustomImageView(
+                                          svgPath: ImageConstant.imgAirplane,
+                                          height: 36.adaptSize,
+                                          width: 36.adaptSize,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Card(
+                            clipBehavior: Clip.antiAlias,
+                            elevation: 0,
+                            margin: EdgeInsets.all(0),
+                            color: appTheme.black900,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadiusStyle.customBorderBL15,
+                            ),
+                            child: Container(
+                              height: 156.v,
+                              width: 306.h,
+                              decoration: AppDecoration.fillBlack.copyWith(
+                                borderRadius:
+                                    BorderRadiusStyle.customBorderBL15,
+                              ),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  CustomImageView(
+                                    imagePath: ImageConstant.imgPhoto156x306,
+                                    height: 156.v,
+                                    width: 306.h,
+                                    radius: BorderRadius.vertical(
+                                      bottom: Radius.circular(15.h),
+                                    ),
+                                    alignment: Alignment.center,
+                                  ),
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: Card(
+                                      clipBehavior: Clip.antiAlias,
+                                      elevation: 0,
+                                      margin: EdgeInsets.all(0),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadiusStyle.customBorderBL15,
+                                      ),
+                                      child: Container(
+                                        height: 156.v,
+                                        width: 306.h,
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 17.h,
+                                          vertical: 20.v,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadiusStyle
+                                              .customBorderBL15,
+                                        ),
+                                        child: Stack(
+                                          alignment: Alignment.bottomLeft,
+                                          children: [
+                                            Align(
+                                              alignment: Alignment.topLeft,
+                                              child: SizedBox(
+                                                width: 235.h,
+                                                child: Text(
+                                                  "msg_samuel_odhiambo".tr,
+                                                  maxLines: 3,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  style: CustomTextStyles
+                                                      .headlineSmallOnPrimary
+                                                      .copyWith(
+                                                    height: 1.50,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: Alignment.bottomLeft,
+                                              child: Container(
+                                                width: 73.h,
+                                                margin: EdgeInsets.only(
+                                                  left: 9.h,
+                                                  bottom: 4.v,
+                                                ),
+                                                child: Text(
+                                                  "lbl_accountant".tr,
+                                                  maxLines: 2,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  style: CustomTextStyles
+                                                      .bodyMediumOnPrimary
+                                                      .copyWith(
+                                                    height: 1.50,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -225,7 +402,7 @@ class SwipeLeftScreen extends StatelessWidget {
       case BottomBarEnum.Computer:
         return AppRoutes.matchesPage;
       case BottomBarEnum.Menu:
-        return AppRoutes.messagesPage;
+        return "/";
       case BottomBarEnum.User:
         return "/";
       default:
@@ -240,8 +417,6 @@ class SwipeLeftScreen extends StatelessWidget {
         return MainPage();
       case AppRoutes.matchesPage:
         return MatchesPage();
-      case AppRoutes.messagesPage:
-        return MessagesPage();
       default:
         return DefaultWidget();
     }

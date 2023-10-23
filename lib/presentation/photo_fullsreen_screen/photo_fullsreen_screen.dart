@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/widgets/custom_icon_button.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/widgets/custom_icon_button.dart';
 
 class PhotoFullsreenScreen extends StatelessWidget {
   const PhotoFullsreenScreen({Key? key}) : super(key: key);
@@ -19,14 +19,14 @@ class PhotoFullsreenScreen extends StatelessWidget {
                       CustomIconButton(
                           height: 52.adaptSize,
                           width: 52.adaptSize,
-                          margin: EdgeInsets.only(left: 40.h, top: 28.v),
+                          margin: EdgeInsets.only(left: 18.h),
                           padding: EdgeInsets.all(14.h),
                           onTap: () {
                             onTapBtnArrowleftone(context);
                           },
                           child: CustomImageView(
                               svgPath: ImageConstant.imgArrowleft)),
-                      SizedBox(height: 24.v),
+                      SizedBox(height: 52.v),
                       CustomImageView(
                           imagePath: ImageConstant.img4,
                           height: 562.v,
@@ -53,7 +53,7 @@ class PhotoFullsreenScreen extends StatelessWidget {
                   Opacity(
                       opacity: 0.4,
                       child: CustomImageView(
-                          imagePath: ImageConstant.imgPhoto29,
+                          imagePath: ImageConstant.imgPhoto12,
                           height: 54.adaptSize,
                           width: 54.adaptSize,
                           radius: BorderRadius.circular(10.h),
@@ -62,7 +62,7 @@ class PhotoFullsreenScreen extends StatelessWidget {
                   Opacity(
                       opacity: 0.4,
                       child: CustomImageView(
-                          imagePath: ImageConstant.imgPhoto30,
+                          imagePath: ImageConstant.imgPhoto13,
                           height: 54.adaptSize,
                           width: 54.adaptSize,
                           radius: BorderRadius.circular(10.h),

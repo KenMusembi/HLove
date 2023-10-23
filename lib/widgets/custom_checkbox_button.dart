@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
+import 'package:hlove/core/app_export.dart';
 
 class CustomCheckboxButton extends StatelessWidget {
   CustomCheckboxButton({
@@ -65,7 +65,7 @@ class CustomCheckboxButton extends StatelessWidget {
         child: Container(
           decoration: decoration ??
               BoxDecoration(
-                color: theme.colorScheme.onPrimary.withOpacity(1),
+                color: appTheme.pink300,
                 borderRadius: BorderRadius.circular(15.h),
                 border: Border.all(
                   color: appTheme.gray200,
@@ -99,7 +99,7 @@ class CustomCheckboxButton extends StatelessWidget {
   Widget get textWidget => Text(
         text ?? "",
         textAlign: textAlignment ?? TextAlign.center,
-        style: textStyle ?? CustomTextStyles.bodyLargeBlack900,
+        style: textStyle ?? theme.textTheme.titleMedium,
       );
   Widget get checkboxWidget => SizedBox(
         height: iconSize,
@@ -119,8 +119,16 @@ class CustomCheckboxButton extends StatelessWidget {
 
 /// Extension on [CustomFloatingButton] to facilitate inclusion of all types of border style etc
 extension CustomCheckBoxStyleHelper on CustomCheckboxButton {
-  static BoxDecoration get fillPrimary => BoxDecoration(
-        color: theme.colorScheme.primary,
+  static BoxDecoration get fillIndigoA => BoxDecoration(
+        color: appTheme.indigoA200,
+        borderRadius: BorderRadius.circular(15.h),
+      );
+  static BoxDecoration get fillOnPrimary => BoxDecoration(
+        color: theme.colorScheme.onPrimary.withOpacity(1),
+        borderRadius: BorderRadius.circular(15.h),
+      );
+  static BoxDecoration get fillBlack => BoxDecoration(
+        color: appTheme.black900,
         borderRadius: BorderRadius.circular(15.h),
       );
 }

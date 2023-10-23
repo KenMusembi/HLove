@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
+import 'package:hlove/core/app_export.dart';
 
 // ignore: must_be_immutable
 class AppbarTitle extends StatelessWidget {
@@ -28,7 +28,7 @@ class AppbarTitle extends StatelessWidget {
         padding: margin ?? EdgeInsets.zero,
         child: Text(
           text,
-          style: theme.textTheme.displaySmall!.copyWith(
+          style: theme.textTheme.headlineLarge!.copyWith(
             color: appTheme.black900,
           ),
         ),

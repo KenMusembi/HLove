@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/widgets/custom_elevated_button.dart';
-import 'package:kenny_s_application1/widgets/custom_icon_button.dart';
-import 'package:kenny_s_application1/widgets/custom_text_form_field.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/widgets/app_bar/appbar_iconbutton.dart';
+import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
+import 'package:hlove/widgets/custom_elevated_button.dart';
+import 'package:hlove/widgets/custom_icon_button.dart';
+import 'package:hlove/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
 class ProfileDetailsOneScreen extends StatelessWidget {
@@ -16,16 +18,23 @@ class ProfileDetailsOneScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
+            appBar: CustomAppBar(
+                leadingWidth: double.maxFinite,
+                leading: AppbarIconbutton(
+                    svgPath: ImageConstant.imgArrowleft,
+                    margin: EdgeInsets.fromLTRB(16.h, 2.v, 307.h, 2.v),
+                    onTap: () {
+                      onTapArrowleftone(context);
+                    })),
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 40.h),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: 48.v),
                       Text("msg_enter_profile_details".tr,
-                          style: theme.textTheme.displaySmall),
-                      SizedBox(height: 92.v),
+                          style: theme.textTheme.headlineLarge),
+                      SizedBox(height: 95.v),
                       SizedBox(
                           height: 106.v,
                           width: 101.h,
@@ -113,22 +122,20 @@ class ProfileDetailsOneScreen extends StatelessWidget {
                                 padding: EdgeInsets.only(left: 19.h, top: 2.v),
                                 child: Text("msg_choose_birthday".tr,
                                     style: CustomTextStyles.titleSmallPrimary))
-                          ]))
+                          ])),
+                      SizedBox(height: 5.v)
                     ])),
             bottomNavigationBar: CustomElevatedButton(
                 text: "lbl_confirm".tr,
-                margin: EdgeInsets.only(left: 40.h, right: 40.h, bottom: 48.v),
-                onTap: () {
-                  onTapConfirm(context);
-                })));
+                margin:
+                    EdgeInsets.only(left: 40.h, right: 40.h, bottom: 48.v))));
   }
 
-  /// Navigates to the calendarScreen when the action is triggered.
+  /// Navigates back to the previous screen.
   ///
-  /// The [BuildContext] parameter is used to build the navigation stack.
-  /// When the action is triggered, this function uses the [Navigator] widget
-  /// to push the named route for the calendarScreen.
-  onTapConfirm(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.calendarScreen);
+  /// This function takes a [BuildContext] object as a parameter, which is used
+  /// to navigate back to the previous screen.
+  onTapArrowleftone(BuildContext context) {
+    Navigator.pop(context);
   }
 }

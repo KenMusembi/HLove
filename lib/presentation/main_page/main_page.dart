@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/widgets/app_bar/appbar_iconbutton.dart';
-import 'package:kenny_s_application1/widgets/app_bar/appbar_iconbutton_1.dart';
-import 'package:kenny_s_application1/widgets/app_bar/appbar_subtitle.dart';
-import 'package:kenny_s_application1/widgets/app_bar/appbar_subtitle_2.dart';
-import 'package:kenny_s_application1/widgets/app_bar/custom_app_bar.dart';
-import 'package:kenny_s_application1/widgets/custom_elevated_button.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/widgets/app_bar/appbar_iconbutton.dart';
+import 'package:hlove/widgets/app_bar/appbar_iconbutton_1.dart';
+import 'package:hlove/widgets/app_bar/appbar_subtitle.dart';
+import 'package:hlove/widgets/app_bar/appbar_subtitle_2.dart';
+import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
+import 'package:hlove/widgets/custom_elevated_button.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -27,8 +27,8 @@ class MainPage extends StatelessWidget {
                 title: Column(children: [
                   AppbarSubtitle(text: "lbl_discover".tr),
                   AppbarSubtitle2(
-                      text: "lbl_chicago_ii".tr,
-                      margin: EdgeInsets.only(left: 18.h, right: 21.h))
+                      text: "lbl_kutus".tr,
+                      margin: EdgeInsets.only(left: 31.h, right: 32.h))
                 ]),
                 actions: [
                   AppbarIconbutton1(
@@ -37,11 +37,12 @@ class MainPage extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: 40.h, vertical: 2.v))
                 ]),
             body: Container(
-                width: double.maxFinite,
+                width: mediaQueryData.size.width,
                 padding: EdgeInsets.symmetric(horizontal: 40.h, vertical: 22.v),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                child: SingleChildScrollView(
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
                       GestureDetector(
                           onTap: () {
                             onTapContent(context);
@@ -175,7 +176,7 @@ class MainPage extends StatelessWidget {
                                 height: 30.adaptSize,
                                 width: 30.adaptSize)
                           ])
-                    ]))));
+                    ])))));
   }
 
   /// Navigates back to the previous screen.
@@ -186,12 +187,12 @@ class MainPage extends StatelessWidget {
     Navigator.pop(context);
   }
 
-  /// Navigates to the swipeRightScreen when the action is triggered.
+  /// Navigates to the swipeLeftScreen when the action is triggered.
   ///
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [Navigator] widget
-  /// to push the named route for the swipeRightScreen.
+  /// to push the named route for the swipeLeftScreen.
   onTapContent(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.swipeRightScreen);
+    Navigator.pushNamed(context, AppRoutes.swipeLeftScreen);
   }
 }

@@ -1,10 +1,10 @@
 import '../passions_screen/widgets/chipviewone_item_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/widgets/app_bar/appbar_iconbutton.dart';
-import 'package:kenny_s_application1/widgets/app_bar/appbar_subtitle_1.dart';
-import 'package:kenny_s_application1/widgets/app_bar/custom_app_bar.dart';
-import 'package:kenny_s_application1/widgets/custom_elevated_button.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/widgets/app_bar/appbar_iconbutton.dart';
+import 'package:hlove/widgets/app_bar/appbar_subtitle_1.dart';
+import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
+import 'package:hlove/widgets/custom_elevated_button.dart';
 
 class PassionsScreen extends StatelessWidget {
   const PassionsScreen({Key? key}) : super(key: key);
@@ -15,41 +15,41 @@ class PassionsScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             appBar: CustomAppBar(
-                leadingWidth: 92.h,
+                leadingWidth: 84.h,
                 leading: AppbarIconbutton(
                     svgPath: ImageConstant.imgArrowleft,
-                    margin: EdgeInsets.only(left: 40.h, top: 2.v, bottom: 2.v),
+                    margin: EdgeInsets.only(left: 32.h, bottom: 3.v),
                     onTap: () {
                       onTapArrowleftone(context);
                     }),
                 actions: [
                   AppbarSubtitle1(
                       text: "lbl_continue".tr,
-                      margin: EdgeInsets.fromLTRB(10.h, 16.v, 10.h, 19.v))
+                      margin:
+                          EdgeInsets.only(left: 10.h, top: 35.v, right: 10.h))
                 ]),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 39.h, vertical: 36.v),
+                padding: EdgeInsets.symmetric(horizontal: 39.h, vertical: 54.v),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("lbl_your_interests".tr,
-                          style: theme.textTheme.displaySmall),
+                          style: theme.textTheme.headlineLarge),
                       Container(
-                          width: 283.h,
-                          margin: EdgeInsets.only(top: 6.v, right: 11.h),
+                          width: 272.h,
+                          margin: EdgeInsets.only(top: 9.v, right: 22.h),
                           child: Text("msg_select_a_few_of".tr,
-                              maxLines: 2,
+                              maxLines: 3,
                               overflow: TextOverflow.ellipsis,
-                              style: CustomTextStyles.bodyMediumBlack900_2
+                              style: CustomTextStyles.bodyLargeBlack900_1
                                   .copyWith(height: 1.50))),
-                      SizedBox(height: 31.v),
+                      SizedBox(height: 5.v),
                       Wrap(
                           runSpacing: 15.v,
                           spacing: 15.h,
                           children: List<Widget>.generate(
-                              14, (index) => ChipviewoneItemWidget())),
-                      SizedBox(height: 5.v)
+                              14, (index) => ChipviewoneItemWidget()))
                     ])),
             bottomNavigationBar: CustomElevatedButton(
                 text: "lbl_continue2".tr,

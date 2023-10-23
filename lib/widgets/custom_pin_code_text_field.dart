@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
+import 'package:hlove/core/app_export.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class CustomPinCodeTextField extends StatelessWidget {
@@ -51,8 +51,8 @@ class CustomPinCodeTextField extends StatelessWidget {
           controller: controller,
           length: 4,
           keyboardType: TextInputType.number,
-          textStyle: textStyle ?? CustomTextStyles.displaySmallPrimary_1,
-          hintStyle: hintStyle ?? CustomTextStyles.displaySmallPrimary_1,
+          textStyle: textStyle ?? CustomTextStyles.displaySmallPrimary,
+          hintStyle: hintStyle ?? CustomTextStyles.displaySmallPrimary,
           inputFormatters: [
             FilteringTextInputFormatter.digitsOnly,
           ],

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/widgets/custom_elevated_button.dart';
-import 'package:kenny_s_application1/widgets/custom_floating_text_field.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/widgets/app_bar/appbar_iconbutton.dart';
+import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
+import 'package:hlove/widgets/custom_elevated_button.dart';
+import 'package:hlove/widgets/custom_floating_text_field.dart';
 
 // ignore_for_file: must_be_immutable
 class ProfileDetailsScreen extends StatelessWidget {
@@ -15,31 +17,33 @@ class ProfileDetailsScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
+            appBar: CustomAppBar(
+                leadingWidth: double.maxFinite,
+                leading: AppbarIconbutton(
+                    svgPath: ImageConstant.imgArrowleft,
+                    margin: EdgeInsets.fromLTRB(26.h, 2.v, 297.h, 2.v),
+                    onTap: () {
+                      onTapArrowleftone(context);
+                    })),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 33.h, vertical: 37.v),
+                padding: EdgeInsets.symmetric(horizontal: 39.h, vertical: 20.v),
                 child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Container(
-                          width: 274.h,
-                          margin: EdgeInsets.only(right: 34.h),
-                          child: Text("msg_tell_us_more_about".tr,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: theme.textTheme.displaySmall!
-                                  .copyWith(height: 1.50))),
-                      Container(
+                      Text("msg_tell_us_more_about".tr,
+                          style: CustomTextStyles.headlineSmallBold),
+                      SizedBox(height: 42.v),
+                      SizedBox(
                           height: 63.v,
                           width: 295.h,
-                          margin: EdgeInsets.only(left: 7.h, top: 30.v),
                           child: Stack(alignment: Alignment.topLeft, children: [
                             Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Container(
                                     padding: EdgeInsets.symmetric(
                                         horizontal: 7.h, vertical: 19.v),
-                                    decoration: AppDecoration.outlineGray200
+                                    decoration: AppDecoration.outlineGray
                                         .copyWith(
                                             borderRadius: BorderRadiusStyle
                                                 .roundedBorder15),
@@ -59,24 +63,23 @@ class ProfileDetailsScreen extends StatelessWidget {
                                     child: Text("msg_where_do_you_stay".tr,
                                         style: theme.textTheme.bodySmall)))
                           ])),
+                      SizedBox(height: 30.v),
                       CustomFloatingTextField(
-                          margin:
-                              EdgeInsets.only(left: 7.h, top: 30.v, right: 7.h),
                           controller: howmanychildrenController,
                           labelText: "msg_how_many_children".tr,
                           labelStyle: theme.textTheme.bodySmall!,
                           hintText: "msg_how_many_children".tr,
                           textInputAction: TextInputAction.done),
-                      Container(
+                      SizedBox(height: 41.v),
+                      SizedBox(
                           height: 63.v,
                           width: 295.h,
-                          margin: EdgeInsets.only(left: 7.h, top: 41.v),
                           child: Stack(alignment: Alignment.topLeft, children: [
                             Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Container(
                                     padding: EdgeInsets.all(20.h),
-                                    decoration: AppDecoration.outlineGray200
+                                    decoration: AppDecoration.outlineGray
                                         .copyWith(
                                             borderRadius: BorderRadiusStyle
                                                 .roundedBorder15),
@@ -90,17 +93,17 @@ class ProfileDetailsScreen extends StatelessWidget {
                                         "msg_what_is_your_occupation".tr,
                                         style: theme.textTheme.bodySmall)))
                           ])),
-                      Container(
+                      SizedBox(height: 30.v),
+                      SizedBox(
                           height: 63.v,
                           width: 295.h,
-                          margin: EdgeInsets.only(left: 7.h, top: 30.v),
                           child: Stack(alignment: Alignment.topLeft, children: [
                             Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Container(
                                     padding: EdgeInsets.symmetric(
                                         horizontal: 7.h, vertical: 19.v),
-                                    decoration: AppDecoration.outlineGray200
+                                    decoration: AppDecoration.outlineGray
                                         .copyWith(
                                             borderRadius: BorderRadiusStyle
                                                 .roundedBorder15),
@@ -120,13 +123,13 @@ class ProfileDetailsScreen extends StatelessWidget {
                                     child: Text("msg_how_would_you_describe".tr,
                                         style: theme.textTheme.bodySmall)))
                           ])),
+                      SizedBox(height: 39.v),
                       Container(
-                          margin: EdgeInsets.fromLTRB(7.h, 39.v, 7.h, 5.v),
                           padding: EdgeInsets.symmetric(
                               horizontal: 20.h, vertical: 19.v),
                           decoration: AppDecoration.fillPrimary.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder15),
-                          child: Row(mainAxisSize: MainAxisSize.max, children: [
+                          child: Row(children: [
                             CustomImageView(
                                 svgPath: ImageConstant.imgCalendar,
                                 height: 20.v,
@@ -135,7 +138,8 @@ class ProfileDetailsScreen extends StatelessWidget {
                                 padding: EdgeInsets.only(left: 19.h),
                                 child: Text("msg_choose_date_confirmed".tr,
                                     style: CustomTextStyles.titleSmallPrimary))
-                          ]))
+                          ])),
+                      SizedBox(height: 5.v)
                     ])),
             bottomNavigationBar: CustomElevatedButton(
                 text: "lbl_confirm".tr,
@@ -145,12 +149,20 @@ class ProfileDetailsScreen extends StatelessWidget {
                 })));
   }
 
-  /// Navigates to the calendarScreen when the action is triggered.
+  /// Navigates back to the previous screen.
+  ///
+  /// This function takes a [BuildContext] object as a parameter, which is used
+  /// to navigate back to the previous screen.
+  onTapArrowleftone(BuildContext context) {
+    Navigator.pop(context);
+  }
+
+  /// Navigates to the iAmScreen when the action is triggered.
   ///
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [Navigator] widget
-  /// to push the named route for the calendarScreen.
+  /// to push the named route for the iAmScreen.
   onTapConfirm(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.calendarScreen);
+    Navigator.pushNamed(context, AppRoutes.iAmScreen);
   }
 }

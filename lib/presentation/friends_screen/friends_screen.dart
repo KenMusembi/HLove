@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/widgets/custom_elevated_button.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/widgets/app_bar/appbar_iconbutton.dart';
+import 'package:hlove/widgets/app_bar/appbar_subtitle_1.dart';
+import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
+import 'package:hlove/widgets/custom_elevated_button.dart';
 
 class FriendsScreen extends StatelessWidget {
   const FriendsScreen({Key? key}) : super(key: key);
@@ -10,15 +13,25 @@ class FriendsScreen extends StatelessWidget {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
+            appBar: CustomAppBar(
+                height: 57.v,
+                leadingWidth: 72.h,
+                leading: AppbarIconbutton(
+                    svgPath: ImageConstant.imgArrowleft,
+                    margin: EdgeInsets.only(left: 20.h, bottom: 5.v),
+                    onTap: () {
+                      onTapArrowleftone(context);
+                    }),
+                actions: [
+                  AppbarSubtitle1(
+                      text: "lbl_skip".tr,
+                      margin:
+                          EdgeInsets.only(left: 42.h, top: 37.v, right: 42.h))
+                ]),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 42.h, vertical: 59.v),
+                padding: EdgeInsets.only(left: 49.h, top: 88.v, right: 49.h),
                 child: Column(children: [
-                  Align(
-                      alignment: Alignment.centerRight,
-                      child: Text("lbl_skip".tr,
-                          style: CustomTextStyles.titleMediumPrimary)),
-                  SizedBox(height: 88.v),
                   CustomImageView(
                       imagePath: ImageConstant.imgPeople,
                       height: 240.adaptSize,
@@ -26,15 +39,16 @@ class FriendsScreen extends StatelessWidget {
                   SizedBox(height: 69.v),
                   Text("msg_update_profile_picture".tr,
                       style: CustomTextStyles.headlineSmallBold),
-                  Container(
+                  SizedBox(height: 13.v),
+                  SizedBox(
                       width: 276.h,
-                      margin: EdgeInsets.fromLTRB(7.h, 13.v, 7.h, 5.v),
                       child: Text("msg_enable_access_to".tr,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.center,
-                          style: CustomTextStyles.bodyMediumBlack900_2
-                              .copyWith(height: 1.50)))
+                          style: CustomTextStyles.bodyMediumBlack900_1
+                              .copyWith(height: 1.50))),
+                  SizedBox(height: 5.v)
                 ])),
             bottomNavigationBar: CustomElevatedButton(
                 text: "msg_access_to_camera".tr,
@@ -42,6 +56,14 @@ class FriendsScreen extends StatelessWidget {
                 onTap: () {
                   onTapAccessto(context);
                 })));
+  }
+
+  /// Navigates back to the previous screen.
+  ///
+  /// This function takes a [BuildContext] object as a parameter, which is used
+  /// to navigate back to the previous screen.
+  onTapArrowleftone(BuildContext context) {
+    Navigator.pop(context);
   }
 
   /// Navigates to the notificationScreen when the action is triggered.

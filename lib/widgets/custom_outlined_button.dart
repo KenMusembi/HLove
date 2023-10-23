@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/widgets/base_button.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/widgets/base_button.dart';
 
 class CustomOutlinedButton extends BaseButton {
   CustomOutlinedButton({

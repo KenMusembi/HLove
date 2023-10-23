@@ -6,12 +6,10 @@ class ImageConstant {
   static String imgGirl2 = '$imagePath/img_girl2.png';
 
   // Onboarding Two images
-  static String imgGirl1300x200 = '$imagePath/img_girl1_300x200.png';
-
-  static String imgGirl3300x200 = '$imagePath/img_girl3_300x200.png';
+  static String imgGirl2360x235 = '$imagePath/img_girl2_360x235.png';
 
   // Onboarding Three images
-  static String imgGirl31 = '$imagePath/img_girl3_1.png';
+  static String imgGirl21 = '$imagePath/img_girl2_1.png';
 
   // Sign up images
   static String imgHlovelogo11 = '$imagePath/img_hlovelogo11.png';
@@ -33,9 +31,7 @@ class ImageConstant {
   // Profile details One images
   static String imgCamera = '$imagePath/img_camera.svg';
 
-  // Calendar images
-  static String imgCalendar812x375 = '$imagePath/img_calendar_812x375.png';
-
+  // Date of birth images
   static String imgArrowleftBlack900 = '$imagePath/img_arrowleft_black_900.svg';
 
   static String imgArrowrightBlack900 =
@@ -51,6 +47,11 @@ class ImageConstant {
 
   static String imgArrowrightBlueGray200 =
       '$imagePath/img_arrowright_blue_gray_200.svg';
+
+  static String imgCheckmarkBlack900 = '$imagePath/img_checkmark_black_900.svg';
+
+  static String imgCheckmarkOnprimary20x20 =
+      '$imagePath/img_checkmark_onprimary_20x20.svg';
 
   // Passions images
   static String imgCameraPrimary = '$imagePath/img_camera_primary.svg';
@@ -91,17 +92,20 @@ class ImageConstant {
   static String imgJoecalih1uwcoottjyunsplash =
       '$imagePath/img_joecalih1uwcoottjyunsplash.png';
 
-  // Swipe right images
-  static String imgPhoto511x293 = '$imagePath/img_photo_511x293.png';
+  // Filters images
+  static String imgArrowright = '$imagePath/img_arrowright.svg';
+
+  // Filters - Tab Container images
+  static String imgLightbulb = '$imagePath/img_lightbulb.svg';
+
+  // Swipe left images
+  static String imgGroup141 = '$imagePath/img_group141.png';
+
+  static String imgPhoto511x360 = '$imagePath/img_photo_511x360.png';
 
   static String imgFavorite = '$imagePath/img_favorite.svg';
 
-  static String imgPhoto156x293 = '$imagePath/img_photo_156x293.png';
-
-  static String imgBgcolor = '$imagePath/img_bgcolor.png';
-
-  // Swipe left images
-  static String imgPhoto511x360 = '$imagePath/img_photo_511x360.png';
+  static String imgAirplane = '$imagePath/img_airplane.svg';
 
   static String imgPhoto156x306 = '$imagePath/img_photo_156x306.png';
 
@@ -110,17 +114,8 @@ class ImageConstant {
 
   static String imgPhoto1 = '$imagePath/img_photo_1.png';
 
-  static String imgFavorite69x69 = '$imagePath/img_favorite_69x69.svg';
-
-  // Swipe left vTwo images
-  static String imgGroup141 = '$imagePath/img_group141.png';
-
-  static String imgPhoto511x375 = '$imagePath/img_photo_511x375.png';
-
-  static String imgPhoto156x295 = '$imagePath/img_photo_156x295.png';
-
-  // Filters images
-  static String imgArrowright = '$imagePath/img_arrowright.svg';
+  static String imgFavoritePrimary69x69 =
+      '$imagePath/img_favorite_primary_69x69.svg';
 
   // Matches images
   static String imgVolume = '$imagePath/img_volume.svg';
@@ -151,72 +146,29 @@ class ImageConstant {
 
   static String imgLocationPrimary = '$imagePath/img_location_primary.svg';
 
-  // Messages images
-  static String imgSearch = '$imagePath/img_search.svg';
-
-  static String imgPhoto58x58 = '$imagePath/img_photo_58x58.png';
-
-  static String imgPhoto11 = '$imagePath/img_photo_11.png';
-
-  static String imgPhoto12 = '$imagePath/img_photo_12.png';
-
-  static String imgPhoto13 = '$imagePath/img_photo_13.png';
-
-  static String imgPhoto14 = '$imagePath/img_photo_14.png';
-
-  static String imgPhoto15 = '$imagePath/img_photo_15.png';
-
-  static String imgPhoto48x48 = '$imagePath/img_photo_48x48.png';
-
-  static String imgPhoto16 = '$imagePath/img_photo_16.png';
-
-  static String imgPhoto17 = '$imagePath/img_photo_17.png';
-
-  static String imgPhoto18 = '$imagePath/img_photo_18.png';
-
-  static String imgPhoto19 = '$imagePath/img_photo_19.png';
-
-  static String imgPhoto20 = '$imagePath/img_photo_20.png';
-
-  static String imgMenuPrimary = '$imagePath/img_menu_primary.svg';
-
-  // Chat images
-  static String imgPhoto21 = '$imagePath/img_photo_21.png';
-
-  static String imgOverflowmenuBlack900 =
-      '$imagePath/img_overflowmenu_black_900.svg';
-
-  static String imgCheckmarkPrimary = '$imagePath/img_checkmark_primary.svg';
-
-  static String imgClockBlack900 = '$imagePath/img_clock_black_900.svg';
-
-  static String imgMicrophonePrimary = '$imagePath/img_microphone_primary.svg';
-
-  // Profile One images
-  static String imgPhoto415x375 = '$imagePath/img_photo_415x375.png';
-
-  static String imgPhoto190x142 = '$imagePath/img_photo_190x142.png';
-
-  static String imgPhoto190x143 = '$imagePath/img_photo_190x143.png';
-
-  static String imgPhoto122x92 = '$imagePath/img_photo_122x92.png';
-
-  static String imgPhoto122x91 = '$imagePath/img_photo_122x91.png';
-
-  static String imgPhoto22 = '$imagePath/img_photo_22.png';
+  static String imgCardsBlueGray200 = '$imagePath/img_cards_blue_gray_200.svg';
 
   // Profile images
-  static String imgPhoto23 = '$imagePath/img_photo_23.png';
+  static String imgPhoto210x360 = '$imagePath/img_photo_210x360.png';
 
-  static String imgPhoto24 = '$imagePath/img_photo_24.png';
+  static String imgArrowleftOnprimary =
+      '$imagePath/img_arrowleft_onprimary.svg';
 
-  static String imgPhoto25 = '$imagePath/img_photo_25.png';
+  static String imgSend = '$imagePath/img_send.svg';
 
-  static String imgPhoto26 = '$imagePath/img_photo_26.png';
+  static String imgLocationPrimary14x14 =
+      '$imagePath/img_location_primary_14x14.svg';
 
-  static String imgPhoto27 = '$imagePath/img_photo_27.png';
+  // Gallery images
+  static String imgPhoto260x146 = '$imagePath/img_photo_260x146.png';
 
-  static String imgPhoto28 = '$imagePath/img_photo_28.png';
+  static String imgPhoto260x147 = '$imagePath/img_photo_260x147.png';
+
+  static String imgPhoto167x94 = '$imagePath/img_photo_167x94.png';
+
+  static String imgPhoto167x93 = '$imagePath/img_photo_167x93.png';
+
+  static String imgPhoto11 = '$imagePath/img_photo_11.png';
 
   // Photo fullsreen images
   static String img4 = '$imagePath/img_4.png';
@@ -225,24 +177,16 @@ class ImageConstant {
 
   static String imgPhoto54x54 = '$imagePath/img_photo_54x54.png';
 
-  static String imgPhoto29 = '$imagePath/img_photo_29.png';
+  static String imgPhoto12 = '$imagePath/img_photo_12.png';
 
-  static String imgPhoto30 = '$imagePath/img_photo_30.png';
+  static String imgPhoto13 = '$imagePath/img_photo_13.png';
 
   // Common images
-  static String imgGirl1 = '$imagePath/img_girl1.png';
-
-  static String imgGirl3 = '$imagePath/img_girl3.png';
-
   static String imgArrowleft = '$imagePath/img_arrowleft.svg';
 
   static String imgPhoto = '$imagePath/img_photo.png';
 
   static String imgCalendar = '$imagePath/img_calendar.svg';
-
-  static String imgGroup45 = '$imagePath/img_group45.svg';
-
-  static String imgLightbulb = '$imagePath/img_lightbulb.svg';
 
   static String imgSettings = '$imagePath/img_settings.svg';
 
@@ -270,26 +214,7 @@ class ImageConstant {
 
   static String imgCards = '$imagePath/img_cards.svg';
 
-  static String imgGroup223 = '$imagePath/img_group223.png';
-
   static String imgFavoritePrimary = '$imagePath/img_favorite_primary.svg';
-
-  static String imgAirplane = '$imagePath/img_airplane.svg';
-
-  static String imgFavoritePrimary69x69 =
-      '$imagePath/img_favorite_primary_69x69.svg';
-
-  static String imgGroup235 = '$imagePath/img_group_235.png';
-
-  static String imgCardsBlueGray200 = '$imagePath/img_cards_blue_gray_200.svg';
-
-  static String imgArrowleftOnprimary =
-      '$imagePath/img_arrowleft_onprimary.svg';
-
-  static String imgSend = '$imagePath/img_send.svg';
-
-  static String imgLocationPrimary14x14 =
-      '$imagePath/img_location_primary_14x14.svg';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
 }

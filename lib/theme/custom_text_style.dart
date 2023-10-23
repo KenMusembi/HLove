@@ -17,13 +17,13 @@ class CustomTextStyles {
   static get bodyLargeBlack900_1 => theme.textTheme.bodyLarge!.copyWith(
         color: appTheme.black900.withOpacity(0.7),
       );
+  static get bodyLargeOnPrimary => theme.textTheme.bodyLarge!.copyWith(
+        color: theme.colorScheme.onPrimary.withOpacity(1),
+      );
   static get bodyMediumBlack900 => theme.textTheme.bodyMedium!.copyWith(
         color: appTheme.black900.withOpacity(0.7),
       );
   static get bodyMediumBlack900_1 => theme.textTheme.bodyMedium!.copyWith(
-        color: appTheme.black900.withOpacity(0.4),
-      );
-  static get bodyMediumBlack900_2 => theme.textTheme.bodyMedium!.copyWith(
         color: appTheme.black900.withOpacity(0.7),
       );
   static get bodyMediumOnPrimary => theme.textTheme.bodyMedium!.copyWith(
@@ -44,9 +44,6 @@ class CustomTextStyles {
       );
   // Display text style
   static get displaySmallPrimary => theme.textTheme.displaySmall!.copyWith(
-        color: theme.colorScheme.primary,
-      );
-  static get displaySmallPrimary_1 => theme.textTheme.displaySmall!.copyWith(
         color: theme.colorScheme.primary.withOpacity(0.49),
       );
   // Headline text style
@@ -65,9 +62,6 @@ class CustomTextStyles {
   static get labelLargeOnPrimary => theme.textTheme.labelLarge!.copyWith(
         color: theme.colorScheme.onPrimary.withOpacity(1),
       );
-  static get labelLargePrimary => theme.textTheme.labelLarge!.copyWith(
-        color: theme.colorScheme.primary,
-      );
   // Title text style
   static get titleMediumBlack900 => theme.textTheme.titleMedium!.copyWith(
         color: appTheme.black900,
@@ -78,9 +72,6 @@ class CustomTextStyles {
       );
   static get titleMediumPrimary => theme.textTheme.titleMedium!.copyWith(
         color: theme.colorScheme.primary,
-      );
-  static get titleSmallOnPrimary => theme.textTheme.titleSmall!.copyWith(
-        color: theme.colorScheme.onPrimary.withOpacity(1),
       );
   static get titleSmallPrimary => theme.textTheme.titleSmall!.copyWith(
         color: theme.colorScheme.primary,

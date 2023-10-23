@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/widgets/app_bar/appbar_iconbutton.dart';
-import 'package:kenny_s_application1/widgets/app_bar/appbar_subtitle_1.dart';
-import 'package:kenny_s_application1/widgets/app_bar/custom_app_bar.dart';
-import 'package:kenny_s_application1/widgets/custom_checkbox_button.dart';
-import 'package:kenny_s_application1/widgets/custom_elevated_button.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/widgets/app_bar/appbar_iconbutton.dart';
+import 'package:hlove/widgets/app_bar/appbar_subtitle_1.dart';
+import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
+import 'package:hlove/widgets/custom_checkbox_button.dart';
+import 'package:hlove/widgets/custom_elevated_button.dart';
 
 // ignore_for_file: must_be_immutable
 class IAmScreen extends StatelessWidget {
   IAmScreen({Key? key}) : super(key: key);
 
-  bool womanvalue = false;
+  bool femalevalue = false;
 
-  bool manvalue = false;
+  bool malevalue = false;
+
+  bool nonBinary = false;
+
+  bool preferNotToSay = false;
 
   @override
   Widget build(BuildContext context) {
@@ -20,72 +24,95 @@ class IAmScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             appBar: CustomAppBar(
-                leadingWidth: 92.h,
+                leadingWidth: 72.h,
                 leading: AppbarIconbutton(
                     svgPath: ImageConstant.imgArrowleft,
-                    margin: EdgeInsets.only(left: 40.h, top: 2.v, bottom: 2.v),
+                    margin: EdgeInsets.only(left: 20.h, bottom: 4.v),
                     onTap: () {
                       onTapArrowleftone(context);
                     }),
                 actions: [
                   AppbarSubtitle1(
                       text: "lbl_continue".tr,
-                      margin: EdgeInsets.fromLTRB(17.h, 18.v, 17.h, 17.v))
+                      margin:
+                          EdgeInsets.only(left: 17.h, top: 36.v, right: 17.h))
                 ]),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 40.h, vertical: 36.v),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("lbl_i_am_a".tr,
-                          style: theme.textTheme.displaySmall),
-                      SizedBox(height: 94.v),
-                      CustomCheckboxButton(
-                          width: 295.h,
-                          text: "lbl_woman".tr,
-                          value: womanvalue,
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20.h, vertical: 18.v),
-                          isRightCheck: true,
-                          onChange: (value) {
-                            womanvalue = value;
-                          }),
-                      SizedBox(height: 10.v),
-                      CustomCheckboxButton(
-                          width: 295.h,
-                          text: "lbl_man".tr,
-                          value: manvalue,
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20.h, vertical: 18.v),
-                          textStyle: theme.textTheme.titleMedium,
-                          decoration: CustomCheckBoxStyleHelper.fillPrimary,
-                          isRightCheck: true,
-                          onChange: (value) {
-                            manvalue = value;
-                          }),
-                      SizedBox(height: 10.v),
-                      Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20.h, vertical: 18.v),
-                          decoration: AppDecoration.outlineGray.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder15),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                    padding: EdgeInsets.only(top: 1.v),
-                                    child: Text("msg_prefer_not_to_say".tr,
-                                        style: CustomTextStyles
-                                            .bodyLargeBlack900)),
-                                CustomImageView(
-                                    svgPath:
-                                        ImageConstant.imgArrowrightBlueGray200,
-                                    height: 20.adaptSize,
-                                    width: 20.adaptSize)
-                              ])),
-                      SizedBox(height: 5.v)
-                    ])),
+                padding: EdgeInsets.symmetric(horizontal: 40.h, vertical: 55.v),
+                child: Column(children: [
+                  Text("msg_indicate_your_gender".tr,
+                      style: theme.textTheme.headlineLarge),
+                  SizedBox(height: 95.v),
+                  CustomCheckboxButton(
+                      width: 295.h,
+                      text: "lbl_female".tr,
+                      value: femalevalue,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20.h, vertical: 18.v),
+                      textStyle: CustomTextStyles.bodyLargeBlack900,
+                      isRightCheck: true,
+                      onChange: (value) {
+                        femalevalue = value;
+                      }),
+                  SizedBox(height: 10.v),
+                  CustomCheckboxButton(
+                      width: 295.h,
+                      text: "lbl_male".tr,
+                      value: malevalue,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20.h, vertical: 18.v),
+                      decoration: CustomCheckBoxStyleHelper.fillIndigoA,
+                      isRightCheck: true,
+                      onChange: (value) {
+                        malevalue = value;
+                      }),
+                  SizedBox(height: 10.v),
+                  Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20.h, vertical: 18.v),
+                      decoration: AppDecoration.outlineGray200.copyWith(
+                          borderRadius: BorderRadiusStyle.roundedBorder15),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                                padding: EdgeInsets.only(top: 1.v),
+                                child: Text("lbl_transgender".tr,
+                                    style:
+                                        CustomTextStyles.bodyLargeOnPrimary)),
+                            CustomImageView(
+                                svgPath: ImageConstant.imgArrowrightBlueGray200,
+                                height: 20.adaptSize,
+                                width: 20.adaptSize)
+                          ])),
+                  SizedBox(height: 10.v),
+                  CustomCheckboxButton(
+                      width: 295.h,
+                      text: "lbl_non_binary".tr,
+                      value: nonBinary,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20.h, vertical: 18.v),
+                      textStyle: CustomTextStyles.titleMediumBlack900,
+                      decoration: CustomCheckBoxStyleHelper.fillOnPrimary,
+                      isRightCheck: true,
+                      onChange: (value) {
+                        nonBinary = value;
+                      }),
+                  SizedBox(height: 15.v),
+                  CustomCheckboxButton(
+                      width: 295.h,
+                      text: "msg_prefer_not_to_say".tr,
+                      value: preferNotToSay,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20.h, vertical: 18.v),
+                      decoration: CustomCheckBoxStyleHelper.fillBlack,
+                      isRightCheck: true,
+                      onChange: (value) {
+                        preferNotToSay = value;
+                      }),
+                  SizedBox(height: 5.v)
+                ])),
             bottomNavigationBar: CustomElevatedButton(
                 text: "lbl_continue2".tr,
                 margin: EdgeInsets.only(left: 40.h, right: 40.h, bottom: 48.v),

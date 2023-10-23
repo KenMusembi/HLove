@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/presentation/main_page/main_page.dart';
-import 'package:kenny_s_application1/presentation/matches_page/matches_page.dart';
-import 'package:kenny_s_application1/presentation/messages_page/messages_page.dart';
-import 'package:kenny_s_application1/widgets/custom_bottom_bar.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/presentation/main_page/main_page.dart';
+import 'package:hlove/presentation/matches_page/matches_page.dart';
+import 'package:hlove/widgets/custom_bottom_bar.dart';
 
 // ignore_for_file: must_be_immutable
 class MainContainerScreen extends StatelessWidget {
@@ -38,7 +37,7 @@ class MainContainerScreen extends StatelessWidget {
       case BottomBarEnum.Computer:
         return AppRoutes.matchesPage;
       case BottomBarEnum.Menu:
-        return AppRoutes.messagesPage;
+        return "/";
       case BottomBarEnum.User:
         return "/";
       default:
@@ -53,8 +52,6 @@ class MainContainerScreen extends StatelessWidget {
         return MainPage();
       case AppRoutes.matchesPage:
         return MatchesPage();
-      case AppRoutes.messagesPage:
-        return MessagesPage();
       default:
         return DefaultWidget();
     }

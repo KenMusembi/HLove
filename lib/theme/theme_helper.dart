@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 
@@ -94,9 +93,6 @@ class ThemeHelper {
           horizontal: -4,
         ),
       ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: colorScheme.onPrimary.withOpacity(1),
-      ),
       dividerTheme: DividerThemeData(
         thickness: 1,
         space: 1,
@@ -134,8 +130,20 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
         displaySmall: TextStyle(
-          color: appTheme.black900,
+          color: colorScheme.primary,
           fontSize: 34.fSize,
+          fontFamily: 'Lato',
+          fontWeight: FontWeight.w700,
+        ),
+        headlineLarge: TextStyle(
+          color: appTheme.black900,
+          fontSize: 32.fSize,
+          fontFamily: 'Lato',
+          fontWeight: FontWeight.w700,
+        ),
+        headlineMedium: TextStyle(
+          color: appTheme.black900,
+          fontSize: 28.fSize,
           fontFamily: 'Lato',
           fontWeight: FontWeight.w700,
         ),
@@ -146,10 +154,16 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
         labelLarge: TextStyle(
-          color: appTheme.blueGray200,
+          color: colorScheme.primary,
           fontSize: 12.fSize,
           fontFamily: 'Lato',
           fontWeight: FontWeight.w700,
+        ),
+        titleLarge: TextStyle(
+          color: appTheme.black900.withOpacity(0.7),
+          fontSize: 20.fSize,
+          fontFamily: 'Lato',
+          fontWeight: FontWeight.w400,
         ),
         titleMedium: TextStyle(
           color: colorScheme.onPrimary.withOpacity(1),
@@ -158,7 +172,7 @@ class TextThemes {
           fontWeight: FontWeight.w700,
         ),
         titleSmall: TextStyle(
-          color: appTheme.black900,
+          color: colorScheme.onPrimary.withOpacity(1),
           fontSize: 14.fSize,
           fontFamily: 'Lato',
           fontWeight: FontWeight.w700,
@@ -229,6 +243,12 @@ class PrimaryColors {
   // Gray
   Color get gray100 => Color(0XFFF3F3F3);
   Color get gray200 => Color(0XFFE8E6EA);
+
+  // Indigo
+  Color get indigoA200 => Color(0XFF5D5FEF);
+
+  // Pink
+  Color get pink300 => Color(0XFFEF5DA8);
 
   // Yellow
   Color get yellow900 => Color(0XFFF27121);

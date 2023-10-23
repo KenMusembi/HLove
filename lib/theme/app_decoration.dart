@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
+import 'package:hlove/core/app_export.dart';
 
 class AppDecoration {
   // Fill decorations
   static BoxDecoration get fillBlack => BoxDecoration(
         color: appTheme.black900,
-      );
-  static BoxDecoration get fillGray => BoxDecoration(
-        color: appTheme.gray100,
       );
   static BoxDecoration get fillOnPrimary => BoxDecoration(
         color: theme.colorScheme.onPrimary.withOpacity(1),
@@ -15,14 +12,8 @@ class AppDecoration {
   static BoxDecoration get fillPrimary => BoxDecoration(
         color: theme.colorScheme.primary,
       );
-  static BoxDecoration get fillYellow => BoxDecoration(
-        color: appTheme.yellow900,
-      );
 
   // Outline decorations
-  static BoxDecoration get outline => BoxDecoration(
-        color: theme.colorScheme.onPrimary.withOpacity(1),
-      );
   static BoxDecoration get outlineBlack => BoxDecoration(
         color: theme.colorScheme.onPrimary.withOpacity(1),
         boxShadow: [
@@ -39,13 +30,13 @@ class AppDecoration {
       );
   static BoxDecoration get outlineBlack900 => BoxDecoration();
   static BoxDecoration get outlineGray => BoxDecoration(
-        color: theme.colorScheme.onPrimary.withOpacity(1),
         border: Border.all(
           color: appTheme.gray200,
           width: 1.h,
         ),
       );
   static BoxDecoration get outlineGray200 => BoxDecoration(
+        color: theme.colorScheme.secondaryContainer,
         border: Border.all(
           color: appTheme.gray200,
           width: 1.h,
@@ -70,15 +61,6 @@ class AppDecoration {
 
 class BorderRadiusStyle {
   // Circle borders
-  static BorderRadius get circleBorder10 => BorderRadius.circular(
-        10.h,
-      );
-  static BorderRadius get circleBorder29 => BorderRadius.circular(
-        29.h,
-      );
-  static BorderRadius get circleBorder33 => BorderRadius.circular(
-        33.h,
-      );
   static BorderRadius get circleBorder39 => BorderRadius.circular(
         39.h,
       );
@@ -87,21 +69,14 @@ class BorderRadiusStyle {
   static BorderRadius get customBorderBL15 => BorderRadius.vertical(
         bottom: Radius.circular(15.h),
       );
-  static BorderRadius get customBorderTL15 => BorderRadius.only(
-        topLeft: Radius.circular(15.h),
-        topRight: Radius.circular(15.h),
-        bottomRight: Radius.circular(15.h),
-      );
-  static BorderRadius get customBorderTL151 => BorderRadius.only(
-        topLeft: Radius.circular(15.h),
-        topRight: Radius.circular(15.h),
-        bottomLeft: Radius.circular(15.h),
-      );
-  static BorderRadius get customBorderTL30 => BorderRadius.vertical(
-        top: Radius.circular(30.h),
+  static BorderRadius get customBorderLR15 => BorderRadius.horizontal(
+        right: Radius.circular(15.h),
       );
 
   // Rounded borders
+  static BorderRadius get roundedBorder10 => BorderRadius.circular(
+        10.h,
+      );
   static BorderRadius get roundedBorder15 => BorderRadius.circular(
         15.h,
       );

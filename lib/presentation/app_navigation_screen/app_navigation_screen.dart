@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
+import 'package:hlove/core/app_export.dart';
 
 class AppNavigationScreen extends StatelessWidget {
   const AppNavigationScreen({Key? key}) : super(key: key);
@@ -258,7 +258,7 @@ class AppNavigationScreen extends StatelessWidget {
                                         ]))),
                                 GestureDetector(
                                     onTap: () {
-                                      onTapCalendar(context);
+                                      onTapDateofbirth(context);
                                     },
                                     child: Container(
                                         decoration: AppDecoration.fillOnPrimary,
@@ -269,7 +269,8 @@ class AppNavigationScreen extends StatelessWidget {
                                                   padding: EdgeInsets.symmetric(
                                                       horizontal: 20.h,
                                                       vertical: 10.v),
-                                                  child: Text("lbl_calendar".tr,
+                                                  child: Text(
+                                                      "lbl_date_of_birth".tr,
                                                       textAlign:
                                                           TextAlign.center,
                                                       style: TextStyle(
@@ -492,7 +493,7 @@ class AppNavigationScreen extends StatelessWidget {
                                         ]))),
                                 GestureDetector(
                                     onTap: () {
-                                      onTapMainContainer(context);
+                                      onTapFiltersTabContainer(context);
                                     },
                                     child: Container(
                                         decoration: AppDecoration.fillOnPrimary,
@@ -504,7 +505,8 @@ class AppNavigationScreen extends StatelessWidget {
                                                       horizontal: 20.h,
                                                       vertical: 10.v),
                                                   child: Text(
-                                                      "msg_main_container".tr,
+                                                      "msg_filters_tab_container"
+                                                          .tr,
                                                       textAlign:
                                                           TextAlign.center,
                                                       style: TextStyle(
@@ -522,7 +524,7 @@ class AppNavigationScreen extends StatelessWidget {
                                         ]))),
                                 GestureDetector(
                                     onTap: () {
-                                      onTapSwiperight(context);
+                                      onTapMainContainer(context);
                                     },
                                     child: Container(
                                         decoration: AppDecoration.fillOnPrimary,
@@ -534,7 +536,7 @@ class AppNavigationScreen extends StatelessWidget {
                                                       horizontal: 20.h,
                                                       vertical: 10.v),
                                                   child: Text(
-                                                      "lbl_swipe_right".tr,
+                                                      "msg_main_container".tr,
                                                       textAlign:
                                                           TextAlign.center,
                                                       style: TextStyle(
@@ -611,126 +613,6 @@ class AppNavigationScreen extends StatelessWidget {
                                         ]))),
                                 GestureDetector(
                                     onTap: () {
-                                      onTapSwipeleftvTwo(context);
-                                    },
-                                    child: Container(
-                                        decoration: AppDecoration.fillOnPrimary,
-                                        child: Column(children: [
-                                          Align(
-                                              alignment: Alignment.centerLeft,
-                                              child: Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 20.h,
-                                                      vertical: 10.v),
-                                                  child: Text(
-                                                      "lbl_swipe_left_vtwo".tr,
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: TextStyle(
-                                                          color:
-                                                              appTheme.black900,
-                                                          fontSize: 20.fSize,
-                                                          fontFamily: 'Roboto',
-                                                          fontWeight: FontWeight
-                                                              .w400)))),
-                                          SizedBox(height: 5.v),
-                                          Divider(
-                                              height: 1.v,
-                                              thickness: 1.v,
-                                              color: appTheme.blueGray400)
-                                        ]))),
-                                GestureDetector(
-                                    onTap: () {
-                                      onTapFiltersTabContainer(context);
-                                    },
-                                    child: Container(
-                                        decoration: AppDecoration.fillOnPrimary,
-                                        child: Column(children: [
-                                          Align(
-                                              alignment: Alignment.centerLeft,
-                                              child: Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 20.h,
-                                                      vertical: 10.v),
-                                                  child: Text(
-                                                      "msg_filters_tab_container"
-                                                          .tr,
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: TextStyle(
-                                                          color:
-                                                              appTheme.black900,
-                                                          fontSize: 20.fSize,
-                                                          fontFamily: 'Roboto',
-                                                          fontWeight: FontWeight
-                                                              .w400)))),
-                                          SizedBox(height: 5.v),
-                                          Divider(
-                                              height: 1.v,
-                                              thickness: 1.v,
-                                              color: appTheme.blueGray400)
-                                        ]))),
-                                GestureDetector(
-                                    onTap: () {
-                                      onTapChat(context);
-                                    },
-                                    child: Container(
-                                        decoration: AppDecoration.fillOnPrimary,
-                                        child: Column(children: [
-                                          Align(
-                                              alignment: Alignment.centerLeft,
-                                              child: Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 20.h,
-                                                      vertical: 10.v),
-                                                  child: Text("lbl_chat".tr,
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: TextStyle(
-                                                          color:
-                                                              appTheme.black900,
-                                                          fontSize: 20.fSize,
-                                                          fontFamily: 'Roboto',
-                                                          fontWeight: FontWeight
-                                                              .w400)))),
-                                          SizedBox(height: 5.v),
-                                          Divider(
-                                              height: 1.v,
-                                              thickness: 1.v,
-                                              color: appTheme.blueGray400)
-                                        ]))),
-                                GestureDetector(
-                                    onTap: () {
-                                      onTapProfileOne(context);
-                                    },
-                                    child: Container(
-                                        decoration: AppDecoration.fillOnPrimary,
-                                        child: Column(children: [
-                                          Align(
-                                              alignment: Alignment.centerLeft,
-                                              child: Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 20.h,
-                                                      vertical: 10.v),
-                                                  child: Text(
-                                                      "lbl_profile_one".tr,
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      style: TextStyle(
-                                                          color:
-                                                              appTheme.black900,
-                                                          fontSize: 20.fSize,
-                                                          fontFamily: 'Roboto',
-                                                          fontWeight: FontWeight
-                                                              .w400)))),
-                                          SizedBox(height: 5.v),
-                                          Divider(
-                                              height: 1.v,
-                                              thickness: 1.v,
-                                              color: appTheme.blueGray400)
-                                        ]))),
-                                GestureDetector(
-                                    onTap: () {
                                       onTapProfile(context);
                                     },
                                     child: Container(
@@ -743,6 +625,35 @@ class AppNavigationScreen extends StatelessWidget {
                                                       horizontal: 20.h,
                                                       vertical: 10.v),
                                                   child: Text("lbl_profile".tr,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                          color:
+                                                              appTheme.black900,
+                                                          fontSize: 20.fSize,
+                                                          fontFamily: 'Roboto',
+                                                          fontWeight: FontWeight
+                                                              .w400)))),
+                                          SizedBox(height: 5.v),
+                                          Divider(
+                                              height: 1.v,
+                                              thickness: 1.v,
+                                              color: appTheme.blueGray400)
+                                        ]))),
+                                GestureDetector(
+                                    onTap: () {
+                                      onTapGallery(context);
+                                    },
+                                    child: Container(
+                                        decoration: AppDecoration.fillOnPrimary,
+                                        child: Column(children: [
+                                          Align(
+                                              alignment: Alignment.centerLeft,
+                                              child: Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                      horizontal: 20.h,
+                                                      vertical: 10.v),
+                                                  child: Text("lbl_gallery".tr,
                                                       textAlign:
                                                           TextAlign.center,
                                                       style: TextStyle(
@@ -855,13 +766,13 @@ class AppNavigationScreen extends StatelessWidget {
     Navigator.pushNamed(context, AppRoutes.profileDetailsOneScreen);
   }
 
-  /// Navigates to the calendarScreen when the action is triggered.
+  /// Navigates to the dateOfBirthScreen when the action is triggered.
   ///
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [Navigator] widget
-  /// to push the named route for the calendarScreen.
-  onTapCalendar(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.calendarScreen);
+  /// to push the named route for the dateOfBirthScreen.
+  onTapDateofbirth(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.dateOfBirthScreen);
   }
 
   /// Navigates to the profileDetailsScreen when the action is triggered.
@@ -927,6 +838,15 @@ class AppNavigationScreen extends StatelessWidget {
     Navigator.pushNamed(context, AppRoutes.signInScreen);
   }
 
+  /// Navigates to the filtersTabContainerScreen when the action is triggered.
+  ///
+  /// The [BuildContext] parameter is used to build the navigation stack.
+  /// When the action is triggered, this function uses the [Navigator] widget
+  /// to push the named route for the filtersTabContainerScreen.
+  onTapFiltersTabContainer(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.filtersTabContainerScreen);
+  }
+
   /// Navigates to the mainContainerScreen when the action is triggered.
   ///
   /// The [BuildContext] parameter is used to build the navigation stack.
@@ -934,15 +854,6 @@ class AppNavigationScreen extends StatelessWidget {
   /// to push the named route for the mainContainerScreen.
   onTapMainContainer(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.mainContainerScreen);
-  }
-
-  /// Navigates to the swipeRightScreen when the action is triggered.
-  ///
-  /// The [BuildContext] parameter is used to build the navigation stack.
-  /// When the action is triggered, this function uses the [Navigator] widget
-  /// to push the named route for the swipeRightScreen.
-  onTapSwiperight(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.swipeRightScreen);
   }
 
   /// Navigates to the swipeLeftScreen when the action is triggered.
@@ -963,42 +874,6 @@ class AppNavigationScreen extends StatelessWidget {
     Navigator.pushNamed(context, AppRoutes.matchScreen);
   }
 
-  /// Navigates to the swipeLeftVtwoScreen when the action is triggered.
-  ///
-  /// The [BuildContext] parameter is used to build the navigation stack.
-  /// When the action is triggered, this function uses the [Navigator] widget
-  /// to push the named route for the swipeLeftVtwoScreen.
-  onTapSwipeleftvTwo(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.swipeLeftVtwoScreen);
-  }
-
-  /// Navigates to the filtersTabContainerScreen when the action is triggered.
-  ///
-  /// The [BuildContext] parameter is used to build the navigation stack.
-  /// When the action is triggered, this function uses the [Navigator] widget
-  /// to push the named route for the filtersTabContainerScreen.
-  onTapFiltersTabContainer(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.filtersTabContainerScreen);
-  }
-
-  /// Navigates to the chatScreen when the action is triggered.
-  ///
-  /// The [BuildContext] parameter is used to build the navigation stack.
-  /// When the action is triggered, this function uses the [Navigator] widget
-  /// to push the named route for the chatScreen.
-  onTapChat(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.chatScreen);
-  }
-
-  /// Navigates to the profileOneScreen when the action is triggered.
-  ///
-  /// The [BuildContext] parameter is used to build the navigation stack.
-  /// When the action is triggered, this function uses the [Navigator] widget
-  /// to push the named route for the profileOneScreen.
-  onTapProfileOne(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.profileOneScreen);
-  }
-
   /// Navigates to the profileScreen when the action is triggered.
   ///
   /// The [BuildContext] parameter is used to build the navigation stack.
@@ -1006,6 +881,15 @@ class AppNavigationScreen extends StatelessWidget {
   /// to push the named route for the profileScreen.
   onTapProfile(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.profileScreen);
+  }
+
+  /// Navigates to the galleryScreen when the action is triggered.
+  ///
+  /// The [BuildContext] parameter is used to build the navigation stack.
+  /// When the action is triggered, this function uses the [Navigator] widget
+  /// to push the named route for the galleryScreen.
+  onTapGallery(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.galleryScreen);
   }
 
   /// Navigates to the photoFullsreenScreen when the action is triggered.

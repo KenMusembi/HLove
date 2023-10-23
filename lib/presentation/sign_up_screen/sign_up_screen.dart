@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kenny_s_application1/core/app_export.dart';
-import 'package:kenny_s_application1/widgets/custom_elevated_button.dart';
-import 'package:kenny_s_application1/widgets/custom_icon_button.dart';
-import 'package:kenny_s_application1/widgets/custom_outlined_button.dart';
+import 'package:hlove/core/app_export.dart';
+import 'package:hlove/widgets/custom_elevated_button.dart';
+import 'package:hlove/widgets/custom_icon_button.dart';
+import 'package:hlove/widgets/custom_outlined_button.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key})
@@ -24,11 +24,11 @@ class SignUpScreen extends StatelessWidget {
           ),
           child: Column(
             children: [
-              SizedBox(height: 3.v),
+              SizedBox(height: 77.v),
               CustomImageView(
                 imagePath: ImageConstant.imgHlovelogo11,
-                height: 224.v,
-                width: 193.h,
+                height: 150.v,
+                width: 132.h,
               ),
               SizedBox(height: 33.v),
               Text(
@@ -37,8 +37,10 @@ class SignUpScreen extends StatelessWidget {
               ),
               SizedBox(height: 33.v),
               CustomElevatedButton(
-                text: "msg_continue_with_email".tr,
-              ),
+                  text: "msg_continue_with_email".tr,
+                  onTap: () {
+                    onTapNumberScreen(context);
+                  }),
               SizedBox(height: 20.v),
               CustomOutlinedButton(
                 text: "msg_use_phone_number".tr,
@@ -141,5 +143,9 @@ class SignUpScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  onTapNumberScreen(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.numberScreen);
   }
 }
