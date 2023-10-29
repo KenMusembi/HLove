@@ -11,15 +11,15 @@ final Map<String, String> enUs = {
   // Onboarding Three Screen
   "msg_free_but_premium": "Free but Premium",
   "msg_sign_up_today_and":
-      "Sign up today and enjoy the first month\nof premium benefits on us.",
+      "Sign up today and enjoy the first month\nof premium benefits, on us.",
 
   // Sign up Screen
   "lbl_or_sign_up_with": "or sign up with",
   "lbl_privacy_policy": "Privacy Policy",
   "lbl_terms_of_use": "Terms of use",
-  "msg_continue_with_email": "Continue with email",
+  "msg_continue_with_phone": "Continue with phone number",
   "msg_sign_up_to_continue": "Sign up to continue",
-  "msg_use_phone_number": "Use phone number",
+  "msg_use_email": "Use email",
 
   // Number Screen
   "lbl_254": "(+254)",
@@ -189,6 +189,7 @@ final Map<String, String> enUs = {
   "lbl_confirm": "Confirm",
   "lbl_continue": "continue",
   "lbl_continue2": "Continue",
+  "lbl_learn_more": "Learn More",
   "lbl_download_hlove": "Download HLove",
   "lbl_francis": "Francis",
   "lbl_gallery": "Gallery",

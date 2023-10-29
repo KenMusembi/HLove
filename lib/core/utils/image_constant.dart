@@ -12,7 +12,9 @@ class ImageConstant {
   static String imgGirl21 = '$imagePath/img_girl2_1.png';
 
   // Sign up images
-  static String imgHlovelogo11 = '$imagePath/img_hlovelogo11.png';
+  static String imgHlovelogo11 = '$imagePath/img_hlovelogo14.png';
+
+  static String imgHlovelogo14 = '$imagePath/img_hlovelogo14.png';
 
   static String imgFacebook = '$imagePath/img_facebook.svg';
 

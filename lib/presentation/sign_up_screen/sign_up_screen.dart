@@ -3,6 +3,8 @@ import 'package:hlove/core/app_export.dart';
 import 'package:hlove/widgets/custom_elevated_button.dart';
 import 'package:hlove/widgets/custom_icon_button.dart';
 import 'package:hlove/widgets/custom_outlined_button.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:hlove/widgets/custom_snackbar.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key})
@@ -26,7 +28,7 @@ class SignUpScreen extends StatelessWidget {
             children: [
               SizedBox(height: 77.v),
               CustomImageView(
-                imagePath: ImageConstant.imgHlovelogo11,
+                imagePath: ImageConstant.imgHlovelogo14,
                 height: 150.v,
                 width: 132.h,
               ),
@@ -37,13 +39,17 @@ class SignUpScreen extends StatelessWidget {
               ),
               SizedBox(height: 33.v),
               CustomElevatedButton(
-                  text: "msg_continue_with_email".tr,
+                  text: "msg_continue_with_phone".tr,
                   onTap: () {
                     onTapNumberScreen(context);
                   }),
               SizedBox(height: 20.v),
               CustomOutlinedButton(
-                text: "msg_use_phone_number".tr,
+                text: "msg_use_email".tr,
+                onTap: () {
+                  //showCustomSnackbar(
+                  //  context, "kindly continue with phone number");
+                },
               ),
               SizedBox(height: 67.v),
               Row(
@@ -148,4 +154,15 @@ class SignUpScreen extends StatelessWidget {
   onTapNumberScreen(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.numberScreen);
   }
+
+  // showCustomSnackbar(BuildContext context, String textString) {
+  //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+  //     content: Text(textString, style: TextStyle(color: Colors.white)),
+  //     backgroundColor: Color(0XFFE94057),
+  //     behavior: SnackBarBehavior.floating,
+  //     margin: EdgeInsets.all(50),
+  //     elevation: 10,
+  //     shape: StadiumBorder(),
+  //   ));
+  // }
 }

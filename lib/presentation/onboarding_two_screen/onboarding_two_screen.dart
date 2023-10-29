@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hlove/core/app_export.dart';
 import 'package:hlove/widgets/custom_elevated_button.dart';
@@ -41,7 +42,7 @@ class OnboardingTwoScreen extends StatelessWidget {
                       SizedBox(
                           height: 8.v,
                           child: AnimatedSmoothIndicator(
-                              activeIndex: 0,
+                              activeIndex: 1,
                               count: 3,
                               effect: ScrollingDotsEffect(
                                   spacing: 8,
@@ -51,7 +52,7 @@ class OnboardingTwoScreen extends StatelessWidget {
                                   dotWidth: 8.h))),
                       SizedBox(height: 42.v),
                       CustomElevatedButton(
-                          text: "lbl_download_hlove".tr,
+                          text: "lbl_learn_more".tr,
                           onTap: () {
                             onTapDownloadhlove(context);
                           }),
@@ -64,6 +65,10 @@ class OnboardingTwoScreen extends StatelessWidget {
                             TextSpan(text: " "),
                             TextSpan(
                                 text: "lbl_sign_in".tr,
+                                recognizer: new TapGestureRecognizer()
+                                  ..onTap = () {
+                                    onTapSignIn(context);
+                                  },
                                 style: CustomTextStyles.titleSmallPrimary_1)
                           ]),
                           textAlign: TextAlign.left)
@@ -77,5 +82,9 @@ class OnboardingTwoScreen extends StatelessWidget {
   /// to push the named route for the onboardingThreeScreen.
   onTapDownloadhlove(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.onboardingThreeScreen);
+  }
+
+  onTapSignIn(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.signInScreen);
   }
 }
