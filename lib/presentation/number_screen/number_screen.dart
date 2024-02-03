@@ -4,12 +4,15 @@ import 'package:hlove/widgets/app_bar/appbar_iconbutton.dart';
 import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
 import 'package:hlove/widgets/custom_elevated_button.dart';
 import 'package:hlove/widgets/custom_text_form_field.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 // ignore_for_file: must_be_immutable
 class NumberScreen extends StatelessWidget {
   NumberScreen({Key? key}) : super(key: key);
 
   TextEditingController phonenumberoneController = TextEditingController();
+  String initialCountry = 'KE';
+  PhoneNumber number = PhoneNumber(isoCode: 'KE');
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -51,53 +54,32 @@ class NumberScreen extends StatelessWidget {
                           SizedBox(height: 44.v),
                           Container(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 6.h, vertical: 17.v),
+                                  horizontal: 6.h, vertical: 6.v),
                               decoration: AppDecoration.outlineGray,
-                              child: Row(children: [
-                                Container(
-                                    width: 85.h,
-                                    child: CustomImageView(
-                                      svgPath: ImageConstant.imgArrowdown,
-                                      height: 24.adaptSize,
-                                      width: 24.adaptSize,
-                                      margin: EdgeInsets.only(left: 61.h),
-                                      // child: Padding(
-                                      //     padding: EdgeInsets.symmetric(
-                                      //         vertical: 3.v),
-                                      //     child: Text("lbl_254".tr,
-                                      //         style:
-                                      //             theme.textTheme.bodyMedium,
-                                      //         child: CustomImageView(
-                                      //             imagePath: ImageConstant
-                                      //                 .imgKenyanflag1,
-                                      //             height: 19.v,
-                                      //             width: 22.h,
-                                      //             margin: EdgeInsets.only(
-                                      //                 top: 3.v,
-                                      //                 right: 63.h,
-                                      //                 bottom: 2.v)
-                                      //                 )
-                                      //                 )
-                                      //                 )
-                                    )),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10.h),
-                                    child: SizedBox(
-                                        height: 24.v,
-                                        child: VerticalDivider(
-                                            width: 1.h,
-                                            thickness: 1.v,
-                                            indent: 3.h,
-                                            endIndent: 3.h))),
-                                CustomTextFormField(
-                                    width: 167.h,
-                                    controller: phonenumberoneController,
-                                    margin: EdgeInsets.only(
-                                        left: 20.h, top: 2.v, bottom: 4.v),
-                                    hintText: "lbl_722000000".tr,
-                                    textInputAction: TextInputAction.done,
-                                    textInputType: TextInputType.phone)
-                              ])),
+                              child: InternationalPhoneNumberInput(
+                                onInputChanged: (PhoneNumber number) {
+                                  print(number.phoneNumber);
+                                },
+                                onInputValidated: (bool value) {
+                                  print(value);
+                                },
+                                selectorConfig: SelectorConfig(
+                                  selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                                  useBottomSheetSafeArea: true,
+                                ),
+                                ignoreBlank: false,
+                                autoValidateMode: AutovalidateMode.disabled,
+                                selectorTextStyle: TextStyle(color: Colors.black),
+                                initialValue: number,
+                                textFieldController: phonenumberoneController,
+                                formatInput: true,
+                                keyboardType:
+                                TextInputType.numberWithOptions(signed: true, decimal: true),
+                                inputBorder: OutlineInputBorder(),
+                                onSaved: (PhoneNumber number) {
+                                  print('On Saved: $number');
+                                },
+                              ),),
                           SizedBox(height: 80.v),
                           CustomElevatedButton(
                               text: "lbl_send_code".tr,

@@ -3,8 +3,6 @@ import 'package:hlove/core/app_export.dart';
 import 'package:hlove/widgets/custom_elevated_button.dart';
 import 'package:hlove/widgets/custom_icon_button.dart';
 import 'package:hlove/widgets/custom_outlined_button.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:hlove/widgets/custom_snackbar.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key})
@@ -22,15 +20,15 @@ class SignUpScreen extends StatelessWidget {
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(
             horizontal: 40.h,
-            vertical: 48.v,
+           // vertical: 24.v,
           ),
           child: Column(
             children: [
               SizedBox(height: 77.v),
               CustomImageView(
                 imagePath: ImageConstant.imgHlovelogo14,
-                height: 150.v,
-                width: 132.h,
+                height: 200.v,
+                width: 250.h,
               ),
               SizedBox(height: 33.v),
               Text(
@@ -47,8 +45,8 @@ class SignUpScreen extends StatelessWidget {
               CustomOutlinedButton(
                 text: "msg_use_email".tr,
                 onTap: () {
-                  //showCustomSnackbar(
-                  //  context, "kindly continue with phone number");
+                  showCustomSnackbar(
+                    context, "kindly continue with phone number");
                 },
               ),
               SizedBox(height: 67.v),
@@ -102,6 +100,10 @@ class SignUpScreen extends StatelessWidget {
                       child: CustomImageView(
                         svgPath: ImageConstant.imgFacebook,
                       ),
+                      onTap: () {
+                        showCustomSnackbar(
+                            context, "facebook signup not available, kindly use phone number");
+                      },
                     ),
                     CustomIconButton(
                       height: 64.adaptSize,
@@ -111,6 +113,10 @@ class SignUpScreen extends StatelessWidget {
                       child: CustomImageView(
                         svgPath: ImageConstant.imgGoogle,
                       ),
+                      onTap: () {
+                        showCustomSnackbar(
+                            context, "google sing in not active, kindly use phone number");
+                      },
                     ),
                     CustomIconButton(
                       height: 64.adaptSize,
@@ -120,6 +126,10 @@ class SignUpScreen extends StatelessWidget {
                       child: CustomImageView(
                         svgPath: ImageConstant.imgEye,
                       ),
+                      onTap: () {
+                        showCustomSnackbar(
+                            context, "apple sign in not active, kindly use phone number");
+                      },
                     ),
                   ],
                 ),
@@ -155,14 +165,15 @@ class SignUpScreen extends StatelessWidget {
     Navigator.pushNamed(context, AppRoutes.numberScreen);
   }
 
-  // showCustomSnackbar(BuildContext context, String textString) {
-  //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-  //     content: Text(textString, style: TextStyle(color: Colors.white)),
-  //     backgroundColor: Color(0XFFE94057),
-  //     behavior: SnackBarBehavior.floating,
-  //     margin: EdgeInsets.all(50),
-  //     elevation: 10,
-  //     shape: StadiumBorder(),
-  //   ));
-  // }
+  showCustomSnackbar(BuildContext context, String textString) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(textString, style: TextStyle(color: Colors.white)),
+      backgroundColor: Color(0XFFE94057),
+      behavior: SnackBarBehavior.floating,
+      margin: EdgeInsets.all(50),
+      elevation: 10,
+      shape: StadiumBorder(),
+      duration: Duration(seconds: 2),
+    ));
+  }
 }

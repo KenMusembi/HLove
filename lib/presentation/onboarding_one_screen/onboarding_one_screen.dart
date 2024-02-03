@@ -4,6 +4,9 @@ import 'package:hlove/core/app_export.dart';
 import 'package:hlove/widgets/custom_elevated_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../widgets/app_bar/appbar_iconbutton.dart';
+import '../../widgets/app_bar/custom_app_bar.dart';
+
 class OnboardingOneScreen extends StatelessWidget {
   const OnboardingOneScreen({Key? key}) : super(key: key);
 
@@ -12,18 +15,50 @@ class OnboardingOneScreen extends StatelessWidget {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
-            body: Container(
+        appBar: CustomAppBar(
+            leadingWidth: double.maxFinite,
+            leading: AppbarIconbutton(
+                svgPath: ImageConstant.imgArrowright,
+                margin: EdgeInsets.fromLTRB(300.h, 3.v, 8.h, 1.v),
+                onTap: () {
+                  onTapDownloadhlove(context);
+                })),
+            body: GestureDetector(
+              onVerticalDragStart: (details) => onTapDownloadhlove(context),
+              onVerticalDragEnd: (details) => onTapDownloadhlove(context),
+              onTap: () {
+                onTapDownloadhlove(context);
+              },
+              // onPanUpdate: (context) {
+              //   if (context.delta.dx > 0) {
+              //     //User swiped from left to right
+              //     _onHorizontalDrag(context);
+              //   } else if (context.delta.dx < 0) {
+              //     //User swiped from right to left
+              //     _onHorizontalDrag(context);
+              //   }
+              // },
+              child: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 40.h),
+                padding: EdgeInsets.symmetric(horizontal: 30.h),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: 10.v),
+                      SizedBox(height: 5.v),
+                      // CustomImageView(
+                      //   imagePath: ImageConstant.imgArrowright,
+                      //   height: 15,
+                      //   width: 10,
+                      // ),
                       CustomImageView(
-                          imagePath: ImageConstant.imgGirl2,
-                          height: 360.v,
-                          width: 235.h,
-                          radius: BorderRadius.circular(15.h)),
+                        onTap: () {
+                          onTapDownloadhlove(context);
+                        },
+                        imagePath: ImageConstant.imgGirl2,
+                        height: 360.v,
+                        width: 235.h,
+                        radius: BorderRadius.circular(15.h),
+                      ),
                       SizedBox(height: 47.v),
                       Text("lbl_hlove".tr,
                           style: CustomTextStyles.headlineSmallPrimary),
@@ -72,7 +107,9 @@ class OnboardingOneScreen extends StatelessWidget {
                                 style: CustomTextStyles.titleSmallPrimary_1)
                           ]),
                           textAlign: TextAlign.left)
-                    ]))));
+                    ]),
+              ),
+            )));
   }
 
   /// Navigates to the onboardingTwoScreen when the action is triggered.
@@ -80,7 +117,18 @@ class OnboardingOneScreen extends StatelessWidget {
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [Navigator] widget
   /// to push the named route for the onboardingTwoScreen.
-  onTapDownloadhlove(BuildContext context) {
+  _onHorizontalDrag(details) {
+    if (details.primaryVelocity == 0)
+      //onTapDownloadhlove(details as BuildContext);
+      print('just tapped'); // user have just tapped on screen (no dragging)
+
+    if (details.primaryVelocity!.compareTo(0) == -1)
+      print('dragged from left');
+    else
+      print('dragged from right');
+  }
+
+  onTapDownloadhlove(context) {
     Navigator.pushNamed(context, AppRoutes.onboardingTwoScreen);
   }
 

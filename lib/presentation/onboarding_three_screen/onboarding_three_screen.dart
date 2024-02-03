@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hlove/core/app_export.dart';
+import 'package:hlove/widgets/app_bar/appbar_iconbutton.dart';
+import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
 import 'package:hlove/widgets/custom_elevated_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -12,6 +14,14 @@ class OnboardingThreeScreen extends StatelessWidget {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
+        appBar: CustomAppBar(
+            leadingWidth: double.maxFinite,
+            leading: AppbarIconbutton(
+                svgPath: ImageConstant.imgArrowright,
+                margin: EdgeInsets.fromLTRB(300.h, 3.v, 8.h, 1.v),
+                onTap: () {
+                  onTapDownloadhlove(context);
+                })),
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 40.h),
@@ -20,6 +30,9 @@ class OnboardingThreeScreen extends StatelessWidget {
                     children: [
                       SizedBox(height: 10.v),
                       CustomImageView(
+                          onTap: () {
+                            onTapDownloadhlove(context);
+                          },
                           imagePath: ImageConstant.imgGirl21,
                           height: 360.v,
                           width: 235.h,

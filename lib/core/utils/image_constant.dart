@@ -14,7 +14,7 @@ class ImageConstant {
   // Sign up images
   static String imgHlovelogo11 = '$imagePath/img_hlovelogo14.png';
 
-  static String imgHlovelogo14 = '$imagePath/img_hlovelogo14.png';
+  static String imgHlovelogo14 = '$imagePath/hlove_logo.png';
 
   static String imgFacebook = '$imagePath/img_facebook.svg';
 
