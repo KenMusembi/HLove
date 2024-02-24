@@ -18,6 +18,8 @@ dependencies:
   intl: ^0.18.0
   fluttertoast: ^8.2.2
   intl_phone_number_input: ^0.7.4
+  firebase_core: ^2.25.4
+  firebase_auth: ^4.17.3
 dev_dependencies: 
   flutter_test: 
     sdk: flutter

@@ -24,7 +24,7 @@ final Map<String, String> enUs = {
   // Number Screen
   "lbl_254": "(+254)",
   "lbl_722000000": "722000000",
-  "lbl_send_code": "Send Code",
+  "lbl_send_code": "Send OTP Code",
   "msg_please_enter_your":
       "Please enter your valid Kenyan phone number. We will send you a code to verify your account. This is only once during registration. ",
   "msg_sign_up_via_mobile": "Sign up via mobile",
