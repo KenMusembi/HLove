@@ -16,6 +16,8 @@ class ImageConstant {
 
   static String imgHlovelogo14 = '$imagePath/hlove_logo.png';
 
+  static String imgYellowCard = '$imagePath/hiv_yellow_card.png';
+
   static String imgFacebook = '$imagePath/img_facebook.svg';
 
   static String imgGoogle = '$imagePath/img_google.svg';

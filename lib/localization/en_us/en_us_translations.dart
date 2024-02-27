@@ -11,7 +11,7 @@ final Map<String, String> enUs = {
   // Onboarding Three Screen
   "msg_free_but_premium": "Free but Premium",
   "msg_sign_up_today_and":
-      "Sign up today and enjoy the first month\nof premium benefits, on us.",
+      "Sign up today and enjoy premium benefits, on us.",
 
   // Sign up Screen
   "lbl_or_sign_up_with": "or sign up with",

@@ -77,10 +77,10 @@ class OnboardingThreeScreen extends StatelessWidget {
                                 style: CustomTextStyles.bodyMediumBlack900),
                             TextSpan(text: " "),
                             TextSpan(
-                                text: "lbl_sign_in".tr,
+                                text: "lbl_sign_up".tr,
                                 recognizer: new TapGestureRecognizer()
                                   ..onTap = () {
-                                    onTapSignIn(context);
+                                    onTapSignUp(context);
                                   },
                                 style: CustomTextStyles.titleSmallPrimary_1)
                           ]),
@@ -97,7 +97,7 @@ class OnboardingThreeScreen extends StatelessWidget {
     Navigator.pushNamed(context, AppRoutes.signUpScreen);
   }
 
-  onTapSignIn(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.signInScreen);
+  onTapSignUp(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.signUpScreen);
   }
 }

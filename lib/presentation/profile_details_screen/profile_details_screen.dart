@@ -6,6 +6,8 @@ import 'package:hlove/widgets/custom_elevated_button.dart';
 import 'package:hlove/widgets/custom_floating_text_field.dart';
 import 'package:intl/intl.dart';
 
+import '../../widgets/custom_icon_button.dart';
+
 // ignore_for_file: must_be_immutable
 class ProfileDetailsScreen extends StatelessWidget {
   ProfileDetailsScreen({Key? key}) : super(key: key);
@@ -14,6 +16,9 @@ class ProfileDetailsScreen extends StatelessWidget {
   TextEditingController howmanychildrenController = TextEditingController();
   TextEditingController whatisyouroccupationController = TextEditingController();
   TextEditingController howwouldyoudescribeyourselfController = TextEditingController();
+
+  static const List<String> list = <String>['Female', 'Male', 'Transgender', 'Non Binary', 'Prefer not to Say'];
+  String dropdownValue = list.first;
 
   @override
   Widget build(BuildContext context) {
@@ -32,40 +37,45 @@ class ProfileDetailsScreen extends StatelessWidget {
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 39.h, vertical: 20.v),
+    child: SingleChildScrollView(
+    child: ConstrainedBox(
+    constraints: BoxConstraints(
+    //minHeight: viewportConstraints.maxHeight,
+    ),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("msg_tell_us_more_about".tr,
                           style: CustomTextStyles.headlineSmallBold),
-                      SizedBox(height: 30.v),
+                      SizedBox(height: 20.v),
                       CustomFloatingTextField(
                           controller: wheredoyoustayController,
                           labelText: "msg_where_do_you_stay".tr,
                           labelStyle: theme.textTheme.bodySmall!,
                           hintText: "msg_sagana_near_sagana".tr,
                           textInputAction: TextInputAction.done),
-                      SizedBox(height: 30.v),
+                      SizedBox(height: 20.v),
                       CustomFloatingTextField(
                           controller: howmanychildrenController,
                           labelText: "msg_how_many_children".tr,
                           labelStyle: theme.textTheme.bodySmall!,
                           hintText: "3".tr,
                           textInputAction: TextInputAction.done),
-                      SizedBox(height: 30.v),
+                      SizedBox(height: 20.v),
                       CustomFloatingTextField(
                           controller: whatisyouroccupationController,
                           labelText: "msg_what_is_your_occupation".tr,
                           labelStyle: theme.textTheme.bodySmall!,
                           hintText: "lbl_peer_educator".tr,
                           textInputAction: TextInputAction.done),
-                      SizedBox(height: 30.v),
+                      SizedBox(height: 20.v),
                       CustomFloatingTextField(
                           controller: howwouldyoudescribeyourselfController,
                           labelText: "msg_how_would_you_describe".tr,
                           labelStyle: theme.textTheme.bodySmall!,
                           hintText: "msg_i_am_an_optimist".tr,
                           textInputAction: TextInputAction.done),
-                      SizedBox(height: 30.v),
+                      SizedBox(height: 20.v),
                       CustomElevatedButton(text: "msg_choose_date_confirmed".tr,
                           onTap: ( ) async {
                             DateTime? pickedDate = await showDatePicker(
@@ -85,14 +95,72 @@ class ProfileDetailsScreen extends StatelessWidget {
                             }
                           }
                       ),
-                      SizedBox(height: 15.v)
-                    ])),
+                      SizedBox(height: 20.v),
+                      Column( children: [ Stack(
+                              alignment: Alignment.bottomCenter,
+                              //fit: StackFit.expand,
+                              children: [
+                                //TO-DO upload picture functionality
+                                CustomImageView(
+                                    imagePath: ImageConstant.imgYellowCard,
+                                    height: 300.adaptSize,
+                                    width: 320.adaptSize,
+                                    radius: BorderRadius.circular(15.h),
+                                    alignment: Alignment.topCenter),
+                                CustomIconButton(
+                                    height: 68.adaptSize,
+                                    width: 68.adaptSize,
+                                    padding: EdgeInsets.all(4.h),
+                                    decoration:
+                                    IconButtonStyleHelper.outlineOnPrimary,
+                                    alignment: Alignment.bottomCenter,
+                                    onTap: (){
+                                      print('camera button tapped');
+                                    },
+                                    child: CustomImageView(
+                                        svgPath: ImageConstant.imgCamera)),
+                              ]),
+                            SizedBox(height: 5.v),
+                            Text('Upload a picture of your yellow card', textAlign: TextAlign.justify),
+                        SizedBox(height: 15.v),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text('Gender   ', style: TextStyle(fontWeight: FontWeight.bold),),
+                            DropdownButton<String>(
+                              value: dropdownValue,
+                              icon: const Icon(Icons.arrow_downward, color: Colors.red),
+                              dropdownColor: Colors.white,
+                              elevation: 16,
+                              //borderRadius: BorderRadius(),
+                              style: const TextStyle(color: Colors.black),
+                              underline: Container(
+                                height: 1,
+                                color: Colors.red,
+                              ),
+                              onChanged: (String? value) {
+                                // This is called when the user selects an item.
+                                // setState(() {
+                                //   dropdownValue = value!;
+                                // });
+                              },
+                              items: list.map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
+                          ],),
+                          ]),
+                    ])))),
             bottomNavigationBar: CustomElevatedButton(
                 text: "lbl_confirm".tr,
-                margin: EdgeInsets.only(left: 40.h, right: 40.h, bottom: 48.v),
+                margin: EdgeInsets.only(left: 40.h, right: 40.h, bottom: 24.v),
                 onTap: () {
                   onTapConfirm(context);
-                })));
+                })
+        ));
   }
 
   /// Navigates back to the previous screen.
@@ -109,6 +177,6 @@ class ProfileDetailsScreen extends StatelessWidget {
   /// When the action is triggered, this function uses the [Navigator] widget
   /// to push the named route for the iAmScreen.
   onTapConfirm(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.iAmScreen);
+    Navigator.pushNamed(context, AppRoutes.passionsScreen);
   }
 }

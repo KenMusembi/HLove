@@ -12,9 +12,9 @@ import 'package:intl/intl.dart';
 class ProfileDetailsOneScreen extends StatelessWidget {
   ProfileDetailsOneScreen({Key? key}) : super(key: key);
 
-  TextEditingController nameoneController = TextEditingController();
-  TextEditingController nameTwoController = TextEditingController();
-  TextEditingController nameThreeController = TextEditingController();
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController middleNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
   TextEditingController usernameController = TextEditingController();
 
   DateTime date = DateTime.now();
@@ -72,7 +72,7 @@ class ProfileDetailsOneScreen extends StatelessWidget {
                           child: Stack(alignment: Alignment.topLeft, children: [
                             CustomTextFormField(
                                 width: 295.h,
-                                controller: nameoneController,
+                                controller: firstNameController,
                                 hintText: "lbl_francis".tr,
                                 textInputAction: TextInputAction.done,
                                 alignment: Alignment.bottomCenter),
@@ -90,7 +90,7 @@ class ProfileDetailsOneScreen extends StatelessWidget {
                           child: Stack(alignment: Alignment.topLeft, children: [
                             CustomTextFormField(
                                 width: 295.h,
-                                controller: nameTwoController,
+                                controller: middleNameController,
                                 hintText: "lbl_example".tr,
                                 textInputAction: TextInputAction.done,
                                 alignment: Alignment.bottomCenter),
@@ -108,7 +108,7 @@ class ProfileDetailsOneScreen extends StatelessWidget {
                           child: Stack(alignment: Alignment.topLeft, children: [
                             CustomTextFormField(
                                 width: 295.h,
-                                controller: nameThreeController,
+                                controller: lastNameController,
                                 hintText: "lbl_mkenya".tr,
                                 textInputAction: TextInputAction.done,
                                 alignment: Alignment.bottomCenter),
@@ -139,6 +139,8 @@ class ProfileDetailsOneScreen extends StatelessWidget {
                           ])),
                       SizedBox(height: 20.v),
                       CustomElevatedButton(text: "msg_choose_birthday".tr,
+                          margin:
+                          EdgeInsets.only(left: 20.h, right: 20.h, bottom: 20.v),
                       onTap: ( ) async {
                         DateTime? pickedDate = await showDatePicker(
                             context: context, //context of current state

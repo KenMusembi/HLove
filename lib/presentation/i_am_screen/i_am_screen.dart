@@ -40,7 +40,12 @@ class IAmScreen extends StatelessWidget {
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 40.h, vertical: 55.v),
-                child: Column(children: [
+                child: SingleChildScrollView(
+              child: ConstrainedBox(
+            constraints: BoxConstraints(
+            //minHeight: viewportConstraints.maxHeight,
+            ),
+               child: Column(children: [
                   Text("msg_indicate_your_gender".tr,
                       style: theme.textTheme.headlineLarge),
                   SizedBox(height: 95.v),
@@ -134,7 +139,7 @@ class IAmScreen extends StatelessWidget {
                             context, "Prefer not to say chosen");
                       }),
                   SizedBox(height: 5.v)
-                ])),
+                ])))),
             bottomNavigationBar: CustomElevatedButton(
                 text: "lbl_continue2".tr,
                 margin: EdgeInsets.only(left: 40.h, right: 40.h, bottom: 48.v),
