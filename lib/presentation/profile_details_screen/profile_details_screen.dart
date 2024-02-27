@@ -4,12 +4,16 @@ import 'package:hlove/widgets/app_bar/appbar_iconbutton.dart';
 import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
 import 'package:hlove/widgets/custom_elevated_button.dart';
 import 'package:hlove/widgets/custom_floating_text_field.dart';
+import 'package:intl/intl.dart';
 
 // ignore_for_file: must_be_immutable
 class ProfileDetailsScreen extends StatelessWidget {
   ProfileDetailsScreen({Key? key}) : super(key: key);
 
+  TextEditingController wheredoyoustayController = TextEditingController();
   TextEditingController howmanychildrenController = TextEditingController();
+  TextEditingController whatisyouroccupationController = TextEditingController();
+  TextEditingController howwouldyoudescribeyourselfController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,7 @@ class ProfileDetailsScreen extends StatelessWidget {
                 leadingWidth: double.maxFinite,
                 leading: AppbarIconbutton(
                     svgPath: ImageConstant.imgArrowleft,
-                    margin: EdgeInsets.fromLTRB(26.h, 2.v, 297.h, 2.v),
+                    margin: EdgeInsets.fromLTRB(26.h, 10.v, 297.h, 2.v),
                     onTap: () {
                       onTapArrowleftone(context);
                     })),
@@ -29,117 +33,59 @@ class ProfileDetailsScreen extends StatelessWidget {
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 39.h, vertical: 20.v),
                 child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("msg_tell_us_more_about".tr,
                           style: CustomTextStyles.headlineSmallBold),
-                      SizedBox(height: 42.v),
-                      SizedBox(
-                          height: 63.v,
-                          width: 295.h,
-                          child: Stack(alignment: Alignment.topLeft, children: [
-                            Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 7.h, vertical: 19.v),
-                                    decoration: AppDecoration.outlineGray
-                                        .copyWith(
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder15),
-                                    child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SizedBox(height: 2.v),
-                                          Text("msg_sagana_near_sagana".tr,
-                                              style: theme.textTheme.bodyMedium)
-                                        ]))),
-                            Align(
-                                alignment: Alignment.topLeft,
-                                child: Padding(
-                                    padding: EdgeInsets.only(left: 28.h),
-                                    child: Text("msg_where_do_you_stay".tr,
-                                        style: theme.textTheme.bodySmall)))
-                          ])),
+                      SizedBox(height: 30.v),
+                      CustomFloatingTextField(
+                          controller: wheredoyoustayController,
+                          labelText: "msg_where_do_you_stay".tr,
+                          labelStyle: theme.textTheme.bodySmall!,
+                          hintText: "msg_sagana_near_sagana".tr,
+                          textInputAction: TextInputAction.done),
                       SizedBox(height: 30.v),
                       CustomFloatingTextField(
                           controller: howmanychildrenController,
                           labelText: "msg_how_many_children".tr,
                           labelStyle: theme.textTheme.bodySmall!,
-                          hintText: "msg_how_many_children".tr,
+                          hintText: "3".tr,
                           textInputAction: TextInputAction.done),
-                      SizedBox(height: 41.v),
-                      SizedBox(
-                          height: 63.v,
-                          width: 295.h,
-                          child: Stack(alignment: Alignment.topLeft, children: [
-                            Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Container(
-                                    padding: EdgeInsets.all(20.h),
-                                    decoration: AppDecoration.outlineGray
-                                        .copyWith(
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder15),
-                                    child: Text("lbl_peer_educator".tr,
-                                        style: theme.textTheme.bodyMedium))),
-                            Align(
-                                alignment: Alignment.topLeft,
-                                child: Padding(
-                                    padding: EdgeInsets.only(left: 28.h),
-                                    child: Text(
-                                        "msg_what_is_your_occupation".tr,
-                                        style: theme.textTheme.bodySmall)))
-                          ])),
                       SizedBox(height: 30.v),
-                      SizedBox(
-                          height: 63.v,
-                          width: 295.h,
-                          child: Stack(alignment: Alignment.topLeft, children: [
-                            Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 7.h, vertical: 19.v),
-                                    decoration: AppDecoration.outlineGray
-                                        .copyWith(
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder15),
-                                    child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SizedBox(height: 2.v),
-                                          Text("msg_i_am_an_optimist".tr,
-                                              style: theme.textTheme.bodyMedium)
-                                        ]))),
-                            Align(
-                                alignment: Alignment.topLeft,
-                                child: Padding(
-                                    padding: EdgeInsets.only(left: 28.h),
-                                    child: Text("msg_how_would_you_describe".tr,
-                                        style: theme.textTheme.bodySmall)))
-                          ])),
-                      SizedBox(height: 39.v),
-                      Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20.h, vertical: 19.v),
-                          decoration: AppDecoration.fillPrimary.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder15),
-                          child: Row(children: [
-                            CustomImageView(
-                                svgPath: ImageConstant.imgCalendar,
-                                height: 20.v,
-                                width: 18.h),
-                            Padding(
-                                padding: EdgeInsets.only(left: 19.h),
-                                child: Text("msg_choose_date_confirmed".tr,
-                                    style: CustomTextStyles.titleSmallPrimary))
-                          ])),
-                      SizedBox(height: 5.v)
+                      CustomFloatingTextField(
+                          controller: whatisyouroccupationController,
+                          labelText: "msg_what_is_your_occupation".tr,
+                          labelStyle: theme.textTheme.bodySmall!,
+                          hintText: "lbl_peer_educator".tr,
+                          textInputAction: TextInputAction.done),
+                      SizedBox(height: 30.v),
+                      CustomFloatingTextField(
+                          controller: howwouldyoudescribeyourselfController,
+                          labelText: "msg_how_would_you_describe".tr,
+                          labelStyle: theme.textTheme.bodySmall!,
+                          hintText: "msg_i_am_an_optimist".tr,
+                          textInputAction: TextInputAction.done),
+                      SizedBox(height: 30.v),
+                      CustomElevatedButton(text: "msg_choose_date_confirmed".tr,
+                          onTap: ( ) async {
+                            DateTime? pickedDate = await showDatePicker(
+                                context: context, //context of current state
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
+                                lastDate: DateTime(2101),
+                                barrierColor: Colors.grey
+                            );
+                            if(pickedDate != null ){
+                              print(pickedDate);  //pickedDate output format => 2021-03-10 00:00:00.000
+                              String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
+                              print(formattedDate); //formatted date output using intl package =>  2021-03-16
+
+                            }else{
+                              print("Date is not selected");
+                            }
+                          }
+                      ),
+                      SizedBox(height: 15.v)
                     ])),
             bottomNavigationBar: CustomElevatedButton(
                 text: "lbl_confirm".tr,

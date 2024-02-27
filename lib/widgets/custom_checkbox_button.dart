@@ -66,9 +66,9 @@ class CustomCheckboxButton extends StatelessWidget {
           decoration: decoration ??
               BoxDecoration(
                 color: appTheme.pink300,
-                borderRadius: BorderRadius.circular(15.h),
+                borderRadius: BorderRadius.circular(10.h),
                 border: Border.all(
-                  color: appTheme.gray200,
+                  color: appTheme.yellow900,
                   width: 1.h,
                 ),
               ),

@@ -49,7 +49,7 @@ class CustomPinCodeTextField extends StatelessWidget {
         child: PinCodeTextField(
           appContext: context,
           controller: controller,
-          length: 4,
+          length: 6,
           keyboardType: TextInputType.number,
           textStyle: textStyle ?? CustomTextStyles.displaySmallPrimary,
           hintStyle: hintStyle ?? CustomTextStyles.displaySmallPrimary,
@@ -58,8 +58,8 @@ class CustomPinCodeTextField extends StatelessWidget {
           ],
           enableActiveFill: true,
           pinTheme: PinTheme(
-            fieldHeight: 70.h,
-            fieldWidth: 66.h,
+            fieldHeight: 48.h,
+            fieldWidth: 44.h,
             shape: PinCodeFieldShape.box,
             borderRadius: BorderRadius.circular(15.h),
             inactiveColor: appTheme.gray200,

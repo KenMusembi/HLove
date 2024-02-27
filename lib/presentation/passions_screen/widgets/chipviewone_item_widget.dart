@@ -31,7 +31,7 @@ class ChipviewoneItemWidget extends StatelessWidget {
         svgPath: ImageConstant.imgCameraPrimary,
         height: 19.adaptSize,
         width: 19.adaptSize,
-        margin: EdgeInsets.only(right: 8.h),
+        margin: EdgeInsets.only(right: 8.h, left: 4.h),
       ),
       selected: false,
       backgroundColor: theme.colorScheme.onPrimary.withOpacity(1),
@@ -42,7 +42,7 @@ class ChipviewoneItemWidget extends StatelessWidget {
           width: 1.h,
         ),
         borderRadius: BorderRadius.circular(
-          15.h,
+          10.h,
         ),
       ),
       onSelected: (value) {},

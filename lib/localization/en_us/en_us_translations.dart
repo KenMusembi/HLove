@@ -30,13 +30,15 @@ final Map<String, String> enUs = {
   "msg_sign_up_via_mobile": "Sign up via mobile",
 
   // Code Screen
-  "lbl_0": "0", "lbl_00_42": "00:42", "lbl_send_again": "Send again",
+  "lbl_0": "0", "lbl_00_42": "00:42", "lbl_send_again": "Get another code",
   "msg_type_the_verification": "Type the verification code \nwe’ve sent you",
 
   // Profile details One Screen
   "lbl_first_name": "First name",
+  "lbl_middle_name": "Middle name",
   "lbl_last_name": "Last name",
   "lbl_mkenya": "Mkenya",
+  "lbl_example": "Example",
   "msg_choose_birthday": "Choose birthday date",
   "msg_enter_profile_details": "Enter profile details",
 
@@ -123,7 +125,7 @@ final Map<String, String> enUs = {
       "Turn on location now and allow app access to your current location to match you to people near you.",
 
   // Sign in Screen
-  "lbl": "********", "lbl_username": "username",
+  "lbl": "********", "lbl_username": "username", "lbl_password": "password",
 
   // Filters Screen
   "lbl_22_28": "22-28",

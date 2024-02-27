@@ -69,7 +69,7 @@ class FiltersTabContainerScreenState extends State<FiltersTabContainerScreen>
                                                             "lbl_clear".tr,
                                                             style: CustomTextStyles
                                                                 .titleMediumPrimary)),
-                                                    SizedBox(height: 30.v),
+                                                    SizedBox(height: 10.v),
                                                     Text("lbl_filters".tr,
                                                         style: CustomTextStyles
                                                             .headlineSmallBold)

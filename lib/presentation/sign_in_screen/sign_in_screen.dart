@@ -5,10 +5,13 @@ import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
 import 'package:hlove/widgets/custom_elevated_button.dart';
 import 'package:hlove/widgets/custom_text_form_field.dart';
 
+import '../../widgets/custom_floating_text_field.dart';
+
 // ignore_for_file: must_be_immutable
 class SignInScreen extends StatelessWidget {
   SignInScreen({Key? key}) : super(key: key);
 
+  TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -32,47 +35,36 @@ class SignInScreen extends StatelessWidget {
                 child: Container(
                     width: double.maxFinite,
                     padding:
-                        EdgeInsets.only(left: 40.h, top: 65.v, right: 40.h),
+                        EdgeInsets.only(left: 40.h, top: 17.v, right: 40.h),
                     child: Column(children: [
                       Text("lbl_sign_in2".tr,
                           style: theme.textTheme.headlineLarge),
-                      SizedBox(height: 95.v),
+                      SizedBox(height: 25.v),
                       CustomImageView(
                           imagePath: ImageConstant.imgPhoto,
                           height: 99.adaptSize,
                           width: 99.adaptSize,
                           radius: BorderRadius.circular(25.h)),
-                      SizedBox(height: 47.v),
-                      SizedBox(
-                          height: 63.v,
-                          width: 295.h,
-                          child: Stack(alignment: Alignment.topLeft, children: [
-                            Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Container(
-                                    padding: EdgeInsets.all(20.h),
-                                    decoration: AppDecoration.outlineGray
-                                        .copyWith(
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder15),
-                                    child: Text("lbl_francis".tr,
-                                        style: theme.textTheme.bodyMedium))),
-                            Align(
-                                alignment: Alignment.topLeft,
-                                child: Padding(
-                                    padding: EdgeInsets.only(left: 28.h),
-                                    child: Text("lbl_username".tr,
-                                        style: theme.textTheme.bodySmall)))
-                          ])),
-                      SizedBox(height: 8.v),
-                      CustomTextFormField(
+                      SizedBox(height: 30.v),
+
+                      CustomFloatingTextField(
+                          controller: usernameController,
+                          labelText: "lbl_username".tr,
+                          labelStyle: theme.textTheme.bodySmall!,
+                          hintText: "lbl_francis".tr,
+                          textInputAction: TextInputAction.done),
+                      SizedBox(height: 20.v),
+                      CustomFloatingTextField(
                           controller: passwordController,
+                          labelText: "lbl_password".tr,
+                          labelStyle: theme.textTheme.bodySmall!,
                           hintText: "lbl".tr,
                           textInputAction: TextInputAction.done,
-                          textInputType: TextInputType.visiblePassword,
+                        textInputType: TextInputType.visiblePassword,
                           obscureText: true,
                           contentPadding: EdgeInsets.symmetric(
-                              horizontal: 20.h, vertical: 23.v)),
+                              horizontal: 20.h, vertical: 23.v)
+                      ),
                       SizedBox(height: 5.v)
                     ]))),
             bottomNavigationBar: CustomElevatedButton(
@@ -97,6 +89,6 @@ class SignInScreen extends StatelessWidget {
   /// When the action is triggered, this function uses the [Navigator] widget
   /// to push the named route for the filtersTabContainerScreen.
   onTapSignin(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.filtersTabContainerScreen);
+    Navigator.pushNamed(context, AppRoutes.filtersPage);
   }
 }

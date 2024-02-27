@@ -117,7 +117,7 @@ class CustomFloatingTextField extends StatelessWidget {
         suffixIconConstraints: suffixConstraints,
         isDense: true,
         contentPadding:
-            contentPadding ?? EdgeInsets.fromLTRB(-5.h, -5.v, -5.h, 48.v),
+            contentPadding ?? EdgeInsets.fromLTRB(10.h, -5.v, -5.h, 48.v),
         fillColor: fillColor ?? theme.colorScheme.onPrimary.withOpacity(1),
         filled: filled,
         border: borderDecoration ??

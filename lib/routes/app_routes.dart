@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hlove/presentation/filters_page/filters_page.dart';
 import 'package:hlove/presentation/main_page/main_page.dart';
 import 'package:hlove/presentation/onboarding_one_screen/onboarding_one_screen.dart';
 import 'package:hlove/presentation/onboarding_two_screen/onboarding_two_screen.dart';
@@ -95,6 +96,7 @@ class AppRoutes {
     notificationScreen: (context) => NotificationScreen(),
     locationScreen: (context) => LocationScreen(),
     signInScreen: (context) => SignInScreen(),
+    filtersPage: (context) => FiltersPage(),
     filtersTabContainerScreen: (context) => FiltersTabContainerScreen(),
     mainContainerScreen: (context) => MainContainerScreen(),
     swipeLeftScreen: (context) => SwipeLeftScreen(),

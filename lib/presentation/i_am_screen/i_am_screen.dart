@@ -44,6 +44,18 @@ class IAmScreen extends StatelessWidget {
                   Text("msg_indicate_your_gender".tr,
                       style: theme.textTheme.headlineLarge),
                   SizedBox(height: 95.v),
+                  // ElevatedButton(
+                  //   style:  ElevatedButton.styleFrom(
+                  //     primary: Colors.pink,
+                  //   // Colors.pink,
+                  //   textStyle: const TextStyle(
+                  //       color: Colors.white, fontSize: 25, fontStyle: FontStyle.normal)
+                  //   ),
+                  //  onPressed: () {
+                  //    showCustomSnackbar(
+                  //        context, "Female chosen");
+                  //  }, child: Text("Female"),
+                  // ),
                   CustomCheckboxButton(
                       width: 295.h,
                       text: "lbl_female".tr,
@@ -52,8 +64,11 @@ class IAmScreen extends StatelessWidget {
                           horizontal: 20.h, vertical: 18.v),
                       textStyle: CustomTextStyles.bodyLargeBlack900,
                       isRightCheck: true,
+
                       onChange: (value) {
                         femalevalue = value;
+                        showCustomSnackbar(
+                                    context, "Female chosen");
                       }),
                   SizedBox(height: 10.v),
                   CustomCheckboxButton(
@@ -66,13 +81,15 @@ class IAmScreen extends StatelessWidget {
                       isRightCheck: true,
                       onChange: (value) {
                         malevalue = value;
+                        showCustomSnackbar(
+                            context, "Male chosen");
                       }),
                   SizedBox(height: 10.v),
                   Container(
                       padding: EdgeInsets.symmetric(
                           horizontal: 20.h, vertical: 18.v),
                       decoration: AppDecoration.outlineGray200.copyWith(
-                          borderRadius: BorderRadiusStyle.roundedBorder15),
+                          borderRadius: BorderRadiusStyle.roundedBorder10),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -98,6 +115,9 @@ class IAmScreen extends StatelessWidget {
                       isRightCheck: true,
                       onChange: (value) {
                         nonBinary = value;
+                        showCustomSnackbar(
+                            context, "Non-binary chosen");
+                        print(nonBinary);
                       }),
                   SizedBox(height: 15.v),
                   CustomCheckboxButton(
@@ -110,6 +130,8 @@ class IAmScreen extends StatelessWidget {
                       isRightCheck: true,
                       onChange: (value) {
                         preferNotToSay = value;
+                        showCustomSnackbar(
+                            context, "Prefer not to say chosen");
                       }),
                   SizedBox(height: 5.v)
                 ])),
@@ -136,5 +158,17 @@ class IAmScreen extends StatelessWidget {
   /// to push the named route for the passionsScreen.
   onTapContinue(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.passionsScreen);
+  }
+
+  showCustomSnackbar(BuildContext context, String textString) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(textString, style: TextStyle(color: Colors.white)),
+      backgroundColor: Color(0XFFE94057),
+      behavior: SnackBarBehavior.floating,
+      margin: EdgeInsets.all(50),
+      elevation: 10,
+      shape: StadiumBorder(),
+      duration: Duration(seconds: 2),
+    ));
   }
 }

@@ -30,7 +30,7 @@ class PassionsScreen extends StatelessWidget {
                 ]),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 39.h, vertical: 54.v),
+                padding: EdgeInsets.symmetric(horizontal: 39.h, vertical: 22.v),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -47,7 +47,7 @@ class PassionsScreen extends StatelessWidget {
                       SizedBox(height: 5.v),
                       Wrap(
                           runSpacing: 15.v,
-                          spacing: 15.h,
+                          spacing: 30.h,
                           children: List<Widget>.generate(
                               14, (index) => ChipviewoneItemWidget()))
                     ])),
