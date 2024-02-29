@@ -62,12 +62,22 @@ class CodeScreen extends StatelessWidget {
                       SizedBox(height: 45.v),
                       CustomPinCodeTextField(
                           context: context, onChanged: (value) {}),
+                      SizedBox(height: 15.v),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.all(30),
+                          textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                              fontStyle: FontStyle.normal),
+                        ),
 
-
-                      SizedBox(height: 75.v),
-                      Text("lbl_send_again".tr,
-                          style: CustomTextStyles.titleMediumPrimary),
-                      SizedBox(height: 10, width: 0),
+                          onPressed: () {
+                            showCustomSnackbar(
+                                context, "Code resending not active at the moment");
+                      }, child: Text("lbl_send_again".tr,
+                          style: TextStyle(color: Colors.white))),
+                      SizedBox(height: 60, width: 0),
                       CustomElevatedButton(
                           text: "Submit".tr,
                           onTap: () {
@@ -86,6 +96,18 @@ class CodeScreen extends StatelessWidget {
   }
 
   onTapProfileDetails(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.profileDetailsOneScreen);
+    Navigator.pushNamed(context, AppRoutes.profileNamesScreen);
+  }
+
+  showCustomSnackbar(BuildContext context, String textString) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(textString, style: TextStyle(color: Colors.white)),
+      backgroundColor: Color(0XFFE94057),
+      behavior: SnackBarBehavior.floating,
+      margin: EdgeInsets.all(50),
+      elevation: 10,
+      shape: StadiumBorder(),
+      duration: Duration(seconds: 2),
+    ));
   }
 }

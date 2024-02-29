@@ -1,4 +1,4 @@
-final Map<String, String> enUs = {
+final Map<String, String> enUs ={
   // Onboarding One Screen
   "lbl_hlove": "HLove",
   "msg_introducing_hlove":
@@ -33,7 +33,7 @@ final Map<String, String> enUs = {
   "lbl_0": "0", "lbl_00_42": "00:42", "lbl_send_again": "Get another code",
   "msg_type_the_verification": "Type the verification code \nwe’ve sent you",
 
-  // Profile details One Screen
+  // Profile Names Screen
   "lbl_first_name": "First name",
   "lbl_middle_name": "Middle name",
   "lbl_last_name": "Last name",
@@ -81,11 +81,15 @@ final Map<String, String> enUs = {
   "msg_what_is_your_occupation": "What is your occupation",
   "msg_where_do_you_stay": "Where do you stay?",
 
-  // I am Screen
+  // Profile Personal Details Screen
   "lbl_female": "Female",
   "lbl_male": "Male",
   "msg_indicate_your_gender": "Indicate your gender",
   "msg_prefer_not_to_say": "Prefer not to say",
+  "lbl_phone_number": "Phone Number",
+  "lbl_email": "Email",
+  "lbl_email_example": "test@gmail.com",
+  "msg_enter_personal_details": "Enter personal details",
 
   // Passions Screen
   "lbl_art": "Art",
@@ -125,7 +129,7 @@ final Map<String, String> enUs = {
       "Turn on location now and allow app access to your current location to match you to people near you.",
 
   // Sign in Screen
-  "lbl": "********", "lbl_username": "username", "lbl_password": "password",
+  "lbl": "********", "lbl_username": "username", "lbl_username_choose": "choose your username", "lbl_password": "password",
 
   // Filters Screen
   "lbl_22_28": "22-28",

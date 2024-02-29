@@ -33,7 +33,7 @@ class ChipviewoneItemWidget extends StatelessWidget {
         width: 19.adaptSize,
         margin: EdgeInsets.only(right: 8.h, left: 4.h),
       ),
-      selected: false,
+      selected: true,
       backgroundColor: theme.colorScheme.onPrimary.withOpacity(1),
       selectedColor: theme.colorScheme.primary,
       shape: RoundedRectangleBorder(

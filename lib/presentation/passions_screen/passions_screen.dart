@@ -6,8 +6,36 @@ import 'package:hlove/widgets/app_bar/appbar_subtitle_1.dart';
 import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
 import 'package:hlove/widgets/custom_elevated_button.dart';
 
-class PassionsScreen extends StatelessWidget {
-  const PassionsScreen({Key? key}) : super(key: key);
+class Item {
+  String text;
+  String imageUrl;
+  bool isSelected;
+
+  Item({required this.text, required this.imageUrl, this.isSelected = false});
+}
+
+class PassionsScreen extends StatefulWidget {
+  @override
+  _PassionsScreenState createState() => _PassionsScreenState();
+}
+
+class _PassionsScreenState extends State<PassionsScreen> {
+  List<Item> _items = [
+    Item(text: 'Photography', imageUrl: 'assets/images/img_camera.png'),
+    Item(text: 'Shopping', imageUrl: 'assets/images/img_bag.png'),
+    Item(text: 'Karaoke', imageUrl: 'assets/images/img_voice.png'),
+    Item(text: 'Yoga', imageUrl: 'assets/images/img_yoga.png'),
+    Item(text: 'Cooking', imageUrl: 'assets/images/img_cooking.png'),
+    Item(text: 'Tennis', imageUrl: 'assets/images/img_tennis.png'),
+    Item(text: 'Run', imageUrl: 'assets/images/img_run.png'),
+    Item(text: 'Swimming', imageUrl: 'assets/images/img_swimming.png'),
+    Item(text: 'Art', imageUrl: 'assets/images/img_art.png'),
+    Item(text: 'Travelling', imageUrl: 'assets/images/img_travelling.png'),
+    Item(text: 'Extreme', imageUrl: 'assets/images/img_extreme_sports.png'),
+    Item(text: 'Music', imageUrl: 'assets/images/img_music.png'),
+    Item(text: 'Drink', imageUrl: 'assets/images/img_drink.png'),
+    Item(text: 'Video games', imageUrl: 'assets/images/img_video_games.png'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +56,15 @@ class PassionsScreen extends StatelessWidget {
                       margin:
                           EdgeInsets.only(left: 10.h, top: 35.v, right: 10.h))
                 ]),
-            body: Container(
-                width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 39.h, vertical: 22.v),
+            body: Padding(
+                padding: EdgeInsets.fromLTRB(
+                    30, 10, 10, 10), // Adjust the value as per your preference
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("lbl_your_interests".tr,
                           style: theme.textTheme.headlineLarge),
+                      SizedBox(height: 20),
                       Container(
                           width: 272.h,
                           margin: EdgeInsets.only(top: 9.v, right: 22.h),
@@ -44,12 +73,98 @@ class PassionsScreen extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                               style: CustomTextStyles.bodyLargeBlack900_1
                                   .copyWith(height: 1.50))),
-                      SizedBox(height: 5.v),
-                      Wrap(
-                          runSpacing: 15.v,
-                          spacing: 30.h,
-                          children: List<Widget>.generate(
-                              14, (index) => ChipviewoneItemWidget()))
+                      SizedBox(height: 10.v),
+
+                      Flexible(
+                          //flex: 2,
+                          child:
+                          GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          childAspectRatio: 2,
+                        ),
+                        itemCount: _items.length,
+                        itemBuilder: (context, index) {
+                          final item = _items[index];
+                          return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  item.isSelected = !item.isSelected;
+                                });
+                              },
+                              child:
+                              Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    RawChip(
+                                      //mainAxisAlignment: MainAxisAlignment.start,
+                                      padding: EdgeInsets.only(
+                                        top: 14.v,
+                                        right: 19.h,
+                                        bottom: 14.v,
+                                      ),
+                                      showCheckmark: false,
+                                      labelPadding: EdgeInsets.zero,
+
+                                      label: Text(
+                                        item.text,
+                                        style: TextStyle(
+                                          color: appTheme.black900,
+                                          fontSize: 12.fSize,
+                                          fontFamily: 'Lato',
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+
+                                      avatar: Image.asset(
+                                        item.imageUrl,
+                                        height: 11.adaptSize,
+                                        width: 11.adaptSize,
+                                        color: item.isSelected
+                                            ? Colors.white
+                                            : theme.colorScheme.primary,
+                                      ),
+                                      // selected: item.isSelected ?  true : false,
+                                      backgroundColor: item.isSelected
+                                          ? theme.colorScheme.primary
+                                          : Colors.white,
+                                      selectedColor: item.isSelected
+                                          ? theme.colorScheme.primary
+                                          : Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(
+                                          color: appTheme.gray200,
+                                          width: 1.h,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          15.h,
+                                        ),
+                                      ),
+                                      //     onSelected: (value) {
+                                      // print(value);
+                                      //     },
+                                    ),
+                                  ])
+                          );
+                        },
+                      )
+                      ),
+                      // ElevatedButton(
+                      //   style: ElevatedButton.styleFrom(
+                      //     padding: EdgeInsets.all(30),
+                      //     textStyle: const TextStyle(
+                      //         color: Colors.white,
+                      //         fontSize: 13,
+                      //         fontStyle: FontStyle.normal),
+                      //   ),
+                      //   onPressed: () {
+                      //     printSelectedItems(); // Call the function to print selected items
+                      //   },
+                      //   child: Text('Print Selected Items', style: TextStyle(color: Colors.white),),
+                      //),
+
+
                     ])),
             bottomNavigationBar: CustomElevatedButton(
                 text: "lbl_continue2".tr,
@@ -75,4 +190,13 @@ class PassionsScreen extends StatelessWidget {
   onTapContinue(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.friendsScreen);
   }
+
+  void printSelectedItems() {
+    for (var item in _items) {
+      if (item.isSelected) {
+        print(item.text); // Print the item's name
+      }
+    }
+  }
+
 }

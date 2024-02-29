@@ -218,6 +218,18 @@ class ImageConstant {
 
   static String imgCards = '$imagePath/img_cards.svg';
 
+  static String imgCardsPNG = '$imagePath/img_cards.png';
+
+  static String imgLike = '$imagePath/img_like.png';
+
+  static String imgPerson = '$imagePath/img_person.png';
+
+  static String imgMessage = '$imagePath/img_message.png';
+
+  static String imgBigLike = '$imagePath/img_big_like.png';
+
+  static String imgLiky = '$imagePath/img.png';
+
   static String imgFavoritePrimary = '$imagePath/img_favorite_primary.svg';
 
   static String imageNotFound = 'assets/images/image_not_found.png';

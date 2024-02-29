@@ -29,7 +29,7 @@ class AppbarIconbutton extends StatelessWidget {
         onTap?.call();
       },
       child: Padding(
-        padding: margin ?? EdgeInsets.zero,
+        padding: margin ?? EdgeInsets.fromLTRB(0, 40, 0, 0),
         child: CustomIconButton(
           height: 52.adaptSize,
           width: 52.adaptSize,

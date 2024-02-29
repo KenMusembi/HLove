@@ -99,6 +99,17 @@ class OnboardingOneScreen extends StatelessWidget {
                                 style: CustomTextStyles.bodyMediumBlack900),
                             TextSpan(text: " "),
                             TextSpan(
+                                text: "lbl_sign_in".tr,
+                                recognizer: new TapGestureRecognizer()
+                                  ..onTap = () {
+                                    onTapSignIn(context);
+                                  },
+                                style: CustomTextStyles.titleSmallPrimary_1),
+                            TextSpan(
+                                text: " or".tr,
+                                style: CustomTextStyles.bodyMediumBlack900),
+                            TextSpan(text: " "),
+                            TextSpan(
                                 text: "lbl_sign_up".tr,
                                 recognizer: new TapGestureRecognizer()
                                   ..onTap = () {
@@ -130,6 +141,10 @@ class OnboardingOneScreen extends StatelessWidget {
 
   onTapDownloadhlove(context) {
     Navigator.pushNamed(context, AppRoutes.onboardingTwoScreen);
+  }
+
+  onTapSignIn(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.signInScreen);
   }
 
   onTapSignUp(BuildContext context) {

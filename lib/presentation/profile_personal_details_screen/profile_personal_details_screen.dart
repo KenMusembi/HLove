@@ -9,15 +9,18 @@ import 'package:hlove/widgets/custom_text_form_field.dart';
 import 'package:intl/intl.dart';
 
 // ignore_for_file: must_be_immutable
-class ProfileDetailsOneScreen extends StatelessWidget {
-  ProfileDetailsOneScreen({Key? key}) : super(key: key);
+class ProfilePersonalDetailsScreen extends StatelessWidget {
+  ProfilePersonalDetailsScreen({Key? key}) : super(key: key);
 
-  TextEditingController firstNameController = TextEditingController();
-  TextEditingController middleNameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController usernameController = TextEditingController();
 
   DateTime date = DateTime.now();
+
+  static const List<String> list = <String>['Female', 'Male', 'Transgender', 'Non Binary', 'Prefer not to Say'];
+  String dropdownValue = list.first;
 
   @override
   Widget build(BuildContext context) {
@@ -39,48 +42,24 @@ class ProfileDetailsOneScreen extends StatelessWidget {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text("msg_enter_profile_details".tr,
+                      Text("msg_enter_personal_details".tr,
                           style: theme.textTheme.headlineLarge),
                       SizedBox(height: 25.v),
                       SizedBox(
-                          height: 106.v,
-                          width: 101.h,
-                          child: Stack(
-                              alignment: Alignment.bottomRight,
-                              children: [
-                                //TO-DO upload picture functionality
-                                CustomImageView(
-                                    imagePath: ImageConstant.imgPhoto,
-                                    height: 99.adaptSize,
-                                    width: 99.adaptSize,
-                                    radius: BorderRadius.circular(25.h),
-                                    alignment: Alignment.topCenter),
-                                CustomIconButton(
-                                    height: 34.adaptSize,
-                                    width: 34.adaptSize,
-                                    padding: EdgeInsets.all(9.h),
-                                    decoration:
-                                        IconButtonStyleHelper.outlineOnPrimary,
-                                    alignment: Alignment.bottomRight,
-                                    child: CustomImageView(
-                                        svgPath: ImageConstant.imgCamera))
-                              ])),
-                      SizedBox(height: 10.v),
-                      SizedBox(
                           height: 64.v,
                           width: 300.h,
                           child: Stack(alignment: Alignment.topLeft, children: [
                             CustomTextFormField(
                                 width: 295.h,
-                                controller: firstNameController,
-                                hintText: "lbl_francis".tr,
+                                controller: phoneController,
+                                hintText: "lbl_722000000".tr,
                                 textInputAction: TextInputAction.done,
                                 alignment: Alignment.bottomCenter),
                             Align(
                                 alignment: Alignment.topLeft,
                                 child: Padding(
                                     padding: EdgeInsets.only(left: 28.h),
-                                    child: Text("lbl_first_name".tr,
+                                    child: Text("lbl_phone_number".tr,
                                         style: theme.textTheme.bodySmall)))
                           ])),
                       SizedBox(height: 25.v),
@@ -90,53 +69,51 @@ class ProfileDetailsOneScreen extends StatelessWidget {
                           child: Stack(alignment: Alignment.topLeft, children: [
                             CustomTextFormField(
                                 width: 295.h,
-                                controller: middleNameController,
-                                hintText: "lbl_example".tr,
+                                controller: emailController,
+                                hintText: "lbl_email_example".tr,
                                 textInputAction: TextInputAction.done,
                                 alignment: Alignment.bottomCenter),
                             Align(
                                 alignment: Alignment.topLeft,
                                 child: Padding(
                                     padding: EdgeInsets.only(left: 28.h),
-                                    child: Text("lbl_middle_name".tr,
+                                    child: Text("lbl_email".tr,
                                         style: theme.textTheme.bodySmall)))
                           ])),
                       SizedBox(height: 25.v),
-                      SizedBox(
-                          height: 64.v,
-                          width: 300.h,
-                          child: Stack(alignment: Alignment.topLeft, children: [
-                            CustomTextFormField(
-                                width: 295.h,
-                                controller: lastNameController,
-                                hintText: "lbl_mkenya".tr,
-                                textInputAction: TextInputAction.done,
-                                alignment: Alignment.bottomCenter),
-                            Align(
-                                alignment: Alignment.topLeft,
-                                child: Padding(
-                                    padding: EdgeInsets.only(left: 28.h),
-                                    child: Text("lbl_last_name".tr,
-                                        style: theme.textTheme.bodySmall)))
-                          ])),
-                      SizedBox(height: 20.v),
-                      SizedBox(
-                          height: 64.v,
-                          width: 300.h,
-                          child: Stack(alignment: Alignment.topLeft, children: [
-                            CustomTextFormField(
-                                width: 295.h,
-                                controller: usernameController,
-                                hintText: "lbl_username".tr,
-                                textInputAction: TextInputAction.done,
-                                alignment: Alignment.bottomCenter),
-                            Align(
-                                alignment: Alignment.topLeft,
-                                child: Padding(
-                                    padding: EdgeInsets.only(left: 28.h),
-                                    child: Text("lbl_username".tr,
-                                        style: theme.textTheme.bodySmall)))
-                          ])),
+                SizedBox(
+                    height: 64.v,
+                    width: 280.h,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text('Gender   ', style: TextStyle(fontWeight: FontWeight.bold),),
+                          DropdownButton<String>(
+                            value: dropdownValue,
+                            hint: Text('Your gender'),
+                            icon: const Icon(Icons.arrow_downward, color: Colors.red),
+                            dropdownColor: Colors.white,
+                            elevation: 16,
+                            //borderRadius: BorderRadius(),
+                            style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w400),
+                            underline: Container(
+                              height: 1,
+                              color: Colors.red,
+                            ),
+                            onChanged: (String? value) {
+                              // This is called when the user selects an item.
+                              // setState(() {
+                              //   dropdownValue = value!;
+                              // });
+                            },
+                            items: list.map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                          ),
+                        ],)),
                       SizedBox(height: 20.v),
                       CustomElevatedButton(text: "msg_choose_birthday".tr,
                           margin:
@@ -158,21 +135,6 @@ class ProfileDetailsOneScreen extends StatelessWidget {
                         }
                                            }
                       ),
-                      // Container(
-                      //     padding: EdgeInsets.symmetric(
-                      //         horizontal: 12.h, vertical: 19.v),
-                      //     decoration: AppDecoration.outlineGray.copyWith(
-                      //         borderRadius: BorderRadiusStyle.roundedBorder15),
-                      //     child: Row(children: [
-                      //       CustomImageView(
-                      //           svgPath: ImageConstant.imgCalendar,
-                      //           height: 20.v,
-                      //           width: 18.h),
-                      //       Padding(
-                      //           padding: EdgeInsets.only(left: 19.h, top: 2.v),
-                      //           child: Text("msg_choose_birthday".tr,
-                      //               style: CustomTextStyles.titleSmallPrimary))
-                      //     ])),
                       SizedBox(height: 5.v)
                     ])),
             bottomNavigationBar: CustomElevatedButton(

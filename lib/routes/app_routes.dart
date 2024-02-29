@@ -7,7 +7,8 @@ import 'package:hlove/presentation/onboarding_three_screen/onboarding_three_scre
 import 'package:hlove/presentation/sign_up_screen/sign_up_screen.dart';
 import 'package:hlove/presentation/number_screen/number_screen.dart';
 import 'package:hlove/presentation/code_screen/code_screen.dart';
-import 'package:hlove/presentation/profile_details_one_screen/profile_details_one_screen.dart';
+import 'package:hlove/presentation/profile_names_screen/profile_names_screen.dart';
+import 'package:hlove/presentation/profile_personal_details_screen/profile_personal_details_screen.dart';
 import 'package:hlove/presentation/date_of_birth_screen/date_of_birth_screen.dart';
 import 'package:hlove/presentation/profile_details_screen/profile_details_screen.dart';
 import 'package:hlove/presentation/i_am_screen/i_am_screen.dart';
@@ -38,9 +39,11 @@ class AppRoutes {
 
   static const String codeScreen = '/code_screen';
 
-  static const String profileDetailsOneScreen = '/profile_details_one_screen';
+  static const String profilePersonalDetailsScreen = '/profile_personal_details_screen';
 
   static const String dateOfBirthScreen = '/date_of_birth_screen';
+
+  static const String profileNamesScreen = '/profile_names_screen';
 
   static const String profileDetailsScreen = '/profile_details_screen';
 
@@ -87,9 +90,10 @@ class AppRoutes {
     numberScreen: (context) => NumberScreen(),
     mainPage: (context) => MainPage(),
     codeScreen: (context) => CodeScreen(),
-    profileDetailsOneScreen: (context) => ProfileDetailsOneScreen(),
-    dateOfBirthScreen: (context) => DateOfBirthScreen(),
+    profileNamesScreen: (context) => ProfileNamesScreen(),
     profileDetailsScreen: (context) => ProfileDetailsScreen(),
+    dateOfBirthScreen: (context) => DateOfBirthScreen(),
+    profilePersonalDetailsScreen: (context) => ProfilePersonalDetailsScreen(),
     iAmScreen: (context) => IAmScreen(),
     passionsScreen: (context) => PassionsScreen(),
     friendsScreen: (context) => FriendsScreen(),

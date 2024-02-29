@@ -228,7 +228,7 @@ class AppNavigationScreen extends StatelessWidget {
                                         ]))),
                                 GestureDetector(
                                     onTap: () {
-                                      onTapProfiledetailsOne(context);
+                                      onTapProfiledetails(context);
                                     },
                                     child: Container(
                                         decoration: AppDecoration.fillOnPrimary,
@@ -762,8 +762,8 @@ class AppNavigationScreen extends StatelessWidget {
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [Navigator] widget
   /// to push the named route for the profileDetailsOneScreen.
-  onTapProfiledetailsOne(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.profileDetailsOneScreen);
+  onTapProfiledetails(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.profileDetailsScreen);
   }
 
   /// Navigates to the dateOfBirthScreen when the action is triggered.
@@ -780,8 +780,17 @@ class AppNavigationScreen extends StatelessWidget {
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [Navigator] widget
   /// to push the named route for the profileDetailsScreen.
-  onTapProfiledetails(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.profileDetailsScreen);
+  onTapProfilenames(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.profileNamesScreen);
+  }
+
+  /// Navigates to the profilePersonalDetails when the action is triggered.
+  ///
+  /// The [BuildContext] parameter is used to build the navigation stack.
+  /// When the action is triggered, this function uses the [Navigator] widget
+  /// to push the named route for the profileDetailsScreen.
+  onTapProfilepersonaldetails(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.profilePersonalDetailsScreen);
   }
 
   /// Navigates to the iAmScreen when the action is triggered.

@@ -17,9 +17,6 @@ class ProfileDetailsScreen extends StatelessWidget {
   TextEditingController whatisyouroccupationController = TextEditingController();
   TextEditingController howwouldyoudescribeyourselfController = TextEditingController();
 
-  static const List<String> list = <String>['Female', 'Male', 'Transgender', 'Non Binary', 'Prefer not to Say'];
-  String dropdownValue = list.first;
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -122,36 +119,8 @@ class ProfileDetailsScreen extends StatelessWidget {
                               ]),
                             SizedBox(height: 5.v),
                             Text('Upload a picture of your yellow card', textAlign: TextAlign.justify),
-                        SizedBox(height: 15.v),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text('Gender   ', style: TextStyle(fontWeight: FontWeight.bold),),
-                            DropdownButton<String>(
-                              value: dropdownValue,
-                              icon: const Icon(Icons.arrow_downward, color: Colors.red),
-                              dropdownColor: Colors.white,
-                              elevation: 16,
-                              //borderRadius: BorderRadius(),
-                              style: const TextStyle(color: Colors.black),
-                              underline: Container(
-                                height: 1,
-                                color: Colors.red,
-                              ),
-                              onChanged: (String? value) {
-                                // This is called when the user selects an item.
-                                // setState(() {
-                                //   dropdownValue = value!;
-                                // });
-                              },
-                              items: list.map<DropdownMenuItem<String>>((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                );
-                              }).toList(),
-                            ),
-                          ],),
+
+
                           ]),
                     ])))),
             bottomNavigationBar: CustomElevatedButton(
