@@ -19,8 +19,10 @@ import 'package:hlove/presentation/location_screen/location_screen.dart';
 import 'package:hlove/presentation/sign_in_screen/sign_in_screen.dart';
 import 'package:hlove/presentation/filters_tab_container_screen/filters_tab_container_screen.dart';
 import 'package:hlove/presentation/main_container_screen/main_container_screen.dart';
-import 'package:hlove/presentation/swipe_left_screen/swipe_left_screen.dart';
 import 'package:hlove/presentation/match_screen/match_screen.dart';
+import 'package:hlove/presentation/matches_page/matches_page.dart';
+import 'package:hlove/presentation/admirers_page/admirers_page.dart';
+import 'package:hlove/presentation/interests_page/interests_page.dart';
 import 'package:hlove/presentation/profile_screen/profile_screen.dart';
 import 'package:hlove/presentation/gallery_screen/gallery_screen.dart';
 import 'package:hlove/presentation/photo_fullsreen_screen/photo_fullsreen_screen.dart';
@@ -68,7 +70,9 @@ class AppRoutes {
 
   static const String mainContainerScreen = '/main_container_screen';
 
-  static const String swipeLeftScreen = '/swipe_left_screen';
+  static const String admirersPage = '/admirers_page';
+
+  static const String interestsPage = '/interests_page';
 
   static const String matchScreen = '/match_screen';
 
@@ -89,6 +93,8 @@ class AppRoutes {
     signUpScreen: (context) => SignUpScreen(),
     numberScreen: (context) => NumberScreen(),
     mainPage: (context) => MainPage(),
+    matchesPage: (context) => MatchesPage(),
+    interestsPage: (context) => InterestsPage(),
     codeScreen: (context) => CodeScreen(),
     profileNamesScreen: (context) => ProfileNamesScreen(),
     profileDetailsScreen: (context) => ProfileDetailsScreen(),
@@ -103,7 +109,7 @@ class AppRoutes {
     filtersPage: (context) => FiltersPage(),
     filtersTabContainerScreen: (context) => FiltersTabContainerScreen(),
     mainContainerScreen: (context) => MainContainerScreen(),
-    swipeLeftScreen: (context) => SwipeLeftScreen(),
+    admirersPage: (context) => AdmirersPage(),
     matchScreen: (context) => MatchScreen(),
     profileScreen: (context) => ProfileScreen(),
     galleryScreen: (context) => GalleryScreen(),

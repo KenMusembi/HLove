@@ -21,12 +21,12 @@ class Item {
   Item({required this.text, required this.imageUrl, this.isSelected = false});
 }
 
-class MatchesPage extends StatefulWidget {
+class InterestsPage extends StatefulWidget {
   @override
-  _MatchesPageState createState() => _MatchesPageState();
+  _InterestsPageState createState() => _InterestsPageState();
 }
 
-class _MatchesPageState extends State<MatchesPage> {
+class _InterestsPageState extends State<InterestsPage> {
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
   List<Item> _items = [
@@ -55,7 +55,7 @@ class _MatchesPageState extends State<MatchesPage> {
                       onTapArrowleftone(context);
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: "lbl_matches".tr),
+                title: AppbarTitle(text: "lbl_interests".tr),
                 actions: [
                   AppbarIconbutton1(
                       svgPath: ImageConstant.imgVolume,
@@ -71,7 +71,7 @@ class _MatchesPageState extends State<MatchesPage> {
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("msg_this_is_a_list_of".tr,
+                              Text("msg_list_of_interests".tr,
                                   style: CustomTextStyles.bodyLargeBlack900_1),
                               SizedBox(height: 47.v),
                               Row(
@@ -102,7 +102,7 @@ class _MatchesPageState extends State<MatchesPage> {
                                       mainAxisSpacing: 15.h,
                                       crossAxisSpacing: 15.h),
                                   physics: NeverScrollableScrollPhysics(),
-                                  itemCount: _items.length,
+                                  itemCount: 4,
                                   itemBuilder: (context, index) {
                                     final item = _items[index];
                                     return GestureDetector(
@@ -111,15 +111,16 @@ class _MatchesPageState extends State<MatchesPage> {
                                             item.isSelected = !item.isSelected;
                                           });
                                         },
-                                        child: SizedBox(
+                                        child:
+                                        SizedBox(
                                           height: 200.v,
                                           width: 140.h,
                                           child: Stack(
                                             alignment: Alignment.bottomCenter,
                                             children: [
-                                              //loop through the pictures dynamically
                                               CustomImageView(
-                                                imagePath: item.imageUrl,
+                                                imagePath:
+                                                item.imageUrl,
                                                 height: 200.v,
                                                 width: 140.h,
                                                 radius: BorderRadius.circular(
@@ -162,7 +163,8 @@ class _MatchesPageState extends State<MatchesPage> {
                                                               .customBorderBL15,
                                                         ),
                                                         child: Stack(
-                                                          alignment: Alignment.center,
+                                                          alignment:
+                                                          Alignment.center,
                                                           children: [
                                                             CustomImageView(
                                                               imagePath: ImageConstant
@@ -206,11 +208,14 @@ class _MatchesPageState extends State<MatchesPage> {
                                                                     ),
                                                                     Opacity(
                                                                       opacity: 0.5,
-                                                                      child: SizedBox(
-                                                                        height: 40.v,
+                                                                      child:
+                                                                      SizedBox(
+                                                                        height:
+                                                                        40.v,
                                                                         child:
                                                                         VerticalDivider(
-                                                                          width: 1.h,
+                                                                          width:
+                                                                          1.h,
                                                                           thickness:
                                                                           1.v,
                                                                           color: theme
@@ -248,6 +253,7 @@ class _MatchesPageState extends State<MatchesPage> {
                                         ));
                                   }),
                               SizedBox(height: 19.v),
+                              //showing date this was liked
                               Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -275,7 +281,7 @@ class _MatchesPageState extends State<MatchesPage> {
                                       mainAxisSpacing: 15.h,
                                       crossAxisSpacing: 15.h),
                                   physics: NeverScrollableScrollPhysics(),
-                                  itemCount: _items.length,
+                                  itemCount: 4,
                                   itemBuilder: (context, index) {
                                     final item = _items[index];
                                     return GestureDetector(
@@ -284,15 +290,16 @@ class _MatchesPageState extends State<MatchesPage> {
                                             item.isSelected = !item.isSelected;
                                           });
                                         },
-                                        child: SizedBox(
+                                        child:
+                                        SizedBox(
                                           height: 200.v,
                                           width: 140.h,
                                           child: Stack(
                                             alignment: Alignment.bottomCenter,
                                             children: [
-                                              //loop through the pictures dynamically
                                               CustomImageView(
-                                                imagePath: item.imageUrl,
+                                                imagePath:
+                                                item.imageUrl,
                                                 height: 200.v,
                                                 width: 140.h,
                                                 radius: BorderRadius.circular(
@@ -335,7 +342,8 @@ class _MatchesPageState extends State<MatchesPage> {
                                                               .customBorderBL15,
                                                         ),
                                                         child: Stack(
-                                                          alignment: Alignment.center,
+                                                          alignment:
+                                                          Alignment.center,
                                                           children: [
                                                             CustomImageView(
                                                               imagePath: ImageConstant
@@ -379,11 +387,14 @@ class _MatchesPageState extends State<MatchesPage> {
                                                                     ),
                                                                     Opacity(
                                                                       opacity: 0.5,
-                                                                      child: SizedBox(
-                                                                        height: 40.v,
+                                                                      child:
+                                                                      SizedBox(
+                                                                        height:
+                                                                        40.v,
                                                                         child:
                                                                         VerticalDivider(
-                                                                          width: 1.h,
+                                                                          width:
+                                                                          1.h,
                                                                           thickness:
                                                                           1.v,
                                                                           color: theme
@@ -442,7 +453,7 @@ class _MatchesPageState extends State<MatchesPage> {
     switch (type) {
       case BottomBarEnum.Discover:
         return AppRoutes.mainPage;
-      case BottomBarEnum.Matches:
+      case BottomBarEnum.Admirers:
         return AppRoutes.admirersPage;
       case BottomBarEnum.Interests:
         return AppRoutes.interestsPage;
@@ -461,7 +472,7 @@ class _MatchesPageState extends State<MatchesPage> {
       case AppRoutes.mainPage:
         return MainPage();
       case AppRoutes.admirersPage:
-        return MatchesPage();
+        return AdmirersPage();
       case AppRoutes.interestsPage:
         return InterestsPage();
       case AppRoutes.matchesPage:

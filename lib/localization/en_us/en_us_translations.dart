@@ -155,6 +155,12 @@ final Map<String, String> enUs ={
   "msg_it_s_a_match_jake": "It’s a match, Jake!",
   "msg_start_a_conversation": "Start a conversation now with each other",
 
+  //Admireres Screen
+  "msg_list_of_admirers": "This is a list of all your admirers.",
+
+  //interests Screen
+  "msg_list_of_interests": "This is a list of all the people you are interested in.",
+
   // Matches Screen
   "lbl_anne_35": "Anne, 35",
   "lbl_esther_23": "Esther, 23",
@@ -201,6 +207,8 @@ final Map<String, String> enUs ={
   "lbl_gallery": "Gallery",
   "lbl_location": "Location",
   "lbl_matches": "Matches",
+  "lbl_admirers": "Admirers",
+  "lbl_interests": "Interests",
   "lbl_non_binary": "Non-binary",
   "lbl_peer_educator": "Peer Educator",
   "lbl_sign_in": "Sign In",

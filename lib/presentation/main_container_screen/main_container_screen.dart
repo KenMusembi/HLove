@@ -3,6 +3,10 @@ import 'package:hlove/core/app_export.dart';
 import 'package:hlove/presentation/main_page/main_page.dart';
 import 'package:hlove/presentation/matches_page/matches_page.dart';
 import 'package:hlove/widgets/custom_bottom_bar.dart';
+import 'package:hlove/presentation/matches_page/matches_page.dart';
+import 'package:hlove/presentation/admirers_page/admirers_page.dart';
+import 'package:hlove/presentation/interests_page/interests_page.dart';
+import 'package:hlove/presentation/profile_screen/profile_screen.dart';
 
 // ignore_for_file: must_be_immutable
 class MainContainerScreen extends StatelessWidget {
@@ -32,16 +36,18 @@ class MainContainerScreen extends StatelessWidget {
   ///Handling route based on bottom click actions
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
-      case BottomBarEnum.Cards:
+      case BottomBarEnum.Discover:
         return AppRoutes.mainPage;
-      case BottomBarEnum.Computer:
+      case BottomBarEnum.Admirers:
+        return AppRoutes.admirersPage;
+      case BottomBarEnum.Interests:
+        return AppRoutes.interestsPage;
+      case BottomBarEnum.Matches:
         return AppRoutes.matchesPage;
-      case BottomBarEnum.Menu:
-        return "/";
-      case BottomBarEnum.User:
-        return "/";
+      case BottomBarEnum.Profile:
+        return AppRoutes.profileScreen;
       default:
-        return "/";
+        return AppRoutes.mainPage;
     }
   }
 
@@ -50,8 +56,14 @@ class MainContainerScreen extends StatelessWidget {
     switch (currentRoute) {
       case AppRoutes.mainPage:
         return MainPage();
+      case AppRoutes.admirersPage:
+        return AdmirersPage();
+      case AppRoutes.interestsPage:
+        return InterestsPage();
       case AppRoutes.matchesPage:
         return MatchesPage();
+      case AppRoutes.profileScreen:
+        return ProfileScreen();
       default:
         return DefaultWidget();
     }

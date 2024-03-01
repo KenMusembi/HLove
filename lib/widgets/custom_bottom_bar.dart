@@ -15,30 +15,37 @@ class CustomBottomBarState extends State<CustomBottomBar> {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      icon: ImageConstant.imgCards,
-      activeIcon: ImageConstant.imgCards,
-      type: BottomBarEnum.Cards,
+      icon: ImageConstant.imgOutdoor,
+      activeIcon: ImageConstant.imgOutdoor,
+      type: BottomBarEnum.Discover,
+    ),
+    BottomMenuModel(
+      icon: ImageConstant.imgStar,
+      activeIcon: ImageConstant.imgStar,
+      type: BottomBarEnum.Admirers,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgComputer,
       activeIcon: ImageConstant.imgComputer,
-      type: BottomBarEnum.Computer,
+      type: BottomBarEnum.Interests,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgMenu,
-      activeIcon: ImageConstant.imgMenu,
-      type: BottomBarEnum.Menu,
+      icon: ImageConstant.imgCards,
+      activeIcon: ImageConstant.imgCards,
+      type: BottomBarEnum.Matches,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgUser,
       activeIcon: ImageConstant.imgUser,
-      type: BottomBarEnum.User,
+      type: BottomBarEnum.Profile,
     )
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Padding (
+      padding: EdgeInsets.only(left: 0.h, top: 12.v, bottom: 0.v),
+        child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
@@ -71,7 +78,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 60.h,
+                      width: 90.h,
                       child: Divider(
                         color: theme.colorScheme.primary,
                       ),
@@ -91,20 +98,23 @@ class CustomBottomBarState extends State<CustomBottomBar> {
             onTap: (index) {
               selectedIndex = index;
               widget.onChanged?.call(bottomMenuList[index].type);
-              setState(() {});
+              setState(() {
+                selectedIndex = index;
+              });
             },
           ),
         ),
       ],
-    );
+    ));
   }
 }
 
 enum BottomBarEnum {
-  Cards,
-  Computer,
-  Menu,
-  User,
+  Discover,
+  Admirers,
+  Interests,
+  Matches,
+  Profile,
 }
 
 class BottomMenuModel {

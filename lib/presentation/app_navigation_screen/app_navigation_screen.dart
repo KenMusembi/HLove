@@ -554,7 +554,7 @@ class AppNavigationScreen extends StatelessWidget {
                                         ]))),
                                 GestureDetector(
                                     onTap: () {
-                                      onTapSwipeleft(context);
+                                      onTapInterests(context);
                                     },
                                     child: Container(
                                         decoration: AppDecoration.fillOnPrimary,
@@ -865,13 +865,35 @@ class AppNavigationScreen extends StatelessWidget {
     Navigator.pushNamed(context, AppRoutes.mainContainerScreen);
   }
 
-  /// Navigates to the swipeLeftScreen when the action is triggered.
+  /// Navigates to the mainPage when the action is triggered.
   ///
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [Navigator] widget
   /// to push the named route for the swipeLeftScreen.
-  onTapSwipeleft(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.swipeLeftScreen);
+  onTapDiscover(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.mainPage);
+  }
+
+  onTapMainPage(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.mainPage);
+  }
+
+  /// Navigates to the admirersPage when the action is triggered.
+  ///
+  /// The [BuildContext] parameter is used to build the navigation stack.
+  /// When the action is triggered, this function uses the [Navigator] widget
+  /// to push the named route for the swipeLeftScreen.
+  onTapAdmirers(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.admirersPage);
+  }
+
+  /// Navigates to the interestsPage when the action is triggered.
+  ///
+  /// The [BuildContext] parameter is used to build the navigation stack.
+  /// When the action is triggered, this function uses the [Navigator] widget
+  /// to push the named route for the swipeLeftScreen.
+  onTapInterests(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.interestsPage);
   }
 
   /// Navigates to the matchScreen when the action is triggered.

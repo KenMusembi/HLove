@@ -6,10 +6,15 @@ import 'package:hlove/widgets/app_bar/appbar_subtitle.dart';
 import 'package:hlove/widgets/app_bar/appbar_subtitle_2.dart';
 import 'package:hlove/widgets/app_bar/custom_app_bar.dart';
 import 'package:hlove/widgets/custom_elevated_button.dart';
-
-void main() => runApp(MyApp());
+import 'package:hlove/widgets/custom_bottom_bar.dart';
+import 'package:hlove/presentation/matches_page/matches_page.dart';
+import 'package:hlove/presentation/admirers_page/admirers_page.dart';
+import 'package:hlove/presentation/interests_page/interests_page.dart';
+import 'package:hlove/presentation/profile_screen/profile_screen.dart';
 
 class MyApp extends StatelessWidget {
+
+  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -191,56 +196,84 @@ class _MainPageState extends State<MainPage> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CustomImageView(
-                              svgPath: ImageConstant.imgCloseYellow900,
-                              height: 30.adaptSize,
-                              width: 30.adaptSize),
-                          CustomImageView(
-                            color: Colors.red,
-                              svgPath: ImageConstant.imgLiky,
-                              height: 36.adaptSize,
-                              width: 42.adaptSize),
-                          CustomImageView(
-                              svgPath: ImageConstant.imgStar,
-                              height: 30.adaptSize,
-                              width: 30.adaptSize)
+                          Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(25),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 4,
+                                    offset: Offset(4, 8), // Shadow position
+                                  ),
+                                ],
+                              ),
+                              child: CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.white54,
+                            child: CustomImageView(
+                                onTap: () {
+                                  print('star selected');
+                                },
+                                svgPath: ImageConstant
+                                    .imgCloseYellow900),
+                          )),
+                          Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 4,
+                                    offset: Offset(4, 8), // Shadow position
+                                  ),
+                                ],
+                              ),
+                              child:
+                          CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Colors.white,
+                            child: CustomImageView(
+                                onTap: () {
+                                  print('star selected');
+                                },
+                                height: 62,
+                                width: 62,
+                                color: Colors.red,
+                                svgPath: ImageConstant
+                                    .imgVector),
+                          )),
+                          Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(25),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 4,
+                                    offset: Offset(4, 8), // Shadow position
+                                  ),
+                                ],
+                              ),
+                              child:
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.white,
+                            child: CustomImageView(
+                                onTap: () {
+                                  print('star selected');
+                                },
+                                svgPath: ImageConstant
+                                    .imgStar),
+                          ))
                         ])
                   ]))),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xF3F3F3),
-        iconSize: 24,
-        showUnselectedLabels: true,
-        elevation: 10,
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: theme.colorScheme.primary,
-        selectedIconTheme: IconThemeData( color: theme.colorScheme.primary),
-        unselectedIconTheme: IconThemeData(color: Colors.grey),
-        currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
+      bottomNavigationBar: CustomBottomBar(
+        onChanged: (BottomBarEnum type) {
+          Navigator.pushNamed(
+              context, getCurrentRoute(type));
         },
-        items: [
-          BottomNavigationBarItem(
-            icon: Image.asset(ImageConstant.imgCardsPNG, color: theme.colorScheme.primary, width: 30.adaptSize, height: 30.adaptSize),
-
-            label: 'Matches',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(ImageConstant.imgLike, color: theme.colorScheme.primary, width: 30.adaptSize, height: 30.adaptSize),
-            label: 'Likes',
-           // backgroundColor: Color(0xF3F3F3)
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(ImageConstant.imgMessage, color: theme.colorScheme.primary, width: 30.adaptSize, height: 30.adaptSize),
-            label: 'Swiped',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(ImageConstant.imgPerson, color: theme.colorScheme.primary,  width: 30.adaptSize, height: 30.adaptSize),
-            label: 'Profile',
-          ),
-        ],
       ),
     );
   }
@@ -259,10 +292,46 @@ class _MainPageState extends State<MainPage> {
   /// When the action is triggered, this function uses the [Navigator] widget
   /// to push the named route for the swipeLeftScreen.
   onTapContent(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.swipeLeftScreen);
+    Navigator.pushNamed(context, AppRoutes.admirersPage);
   }
 
   goToFilters(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.filtersPage);
+  }
+
+  ///Handling route based on bottom click actions
+  String getCurrentRoute(BottomBarEnum type) {
+    switch (type) {
+      case BottomBarEnum.Discover:
+        return AppRoutes.mainPage;
+      case BottomBarEnum.Admirers:
+        return AppRoutes.admirersPage;
+      case BottomBarEnum.Interests:
+        return AppRoutes.interestsPage;
+      case BottomBarEnum.Matches:
+        return AppRoutes.matchesPage;
+      case BottomBarEnum.Profile:
+        return AppRoutes.profileScreen;
+      default:
+        return AppRoutes.mainPage;
+    }
+  }
+
+  ///Handling page based on route
+  Widget getCurrentPage(String currentRoute) {
+    switch (currentRoute) {
+      case AppRoutes.mainPage:
+        return MainPage();
+      case AppRoutes.admirersPage:
+        return AdmirersPage();
+      case AppRoutes.interestsPage:
+        return InterestsPage();
+      case AppRoutes.matchesPage:
+        return MatchesPage();
+      case AppRoutes.profileScreen:
+        return ProfileScreen();
+      default:
+        return DefaultWidget();
+    }
   }
 }
