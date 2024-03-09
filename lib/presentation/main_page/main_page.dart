@@ -12,6 +12,17 @@ import 'package:hlove/presentation/admirers_page/admirers_page.dart';
 import 'package:hlove/presentation/interests_page/interests_page.dart';
 import 'package:hlove/presentation/profile_screen/profile_screen.dart';
 
+class Item {
+  String name;
+  String age;
+  String occupation;
+  String distance;
+  String imageUrl;
+  bool isSelected;
+
+  Item({required this.name, required this.age, required this.occupation,required this.distance, required this.imageUrl, this.isSelected = false});
+}
+
 class MyApp extends StatelessWidget {
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
@@ -35,9 +46,16 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
 
+  List<Item> _items = [
+    Item(name: 'Esther Njeri', age: '23', occupation: 'Per Educator', distance: '5', imageUrl: 'assets/images/img_camera.png'),
+    Item(name: 'Stacy Chemutai', age: '31', occupation: 'Photographer', distance: '11', imageUrl: 'assets/images/img_bag.png'),
+    Item(name: 'Anne Latema', age: '35', occupation: 'Tailor', distance: '3', imageUrl: 'assets/images/img_voice.png'),
+    Item(name: 'Lisa Onyango', age: '26', occupation: 'Accountant', distance: '9', imageUrl: 'assets/images/img_yoga.png')
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(child: Scaffold(
       appBar: AppBar(
         //title: Text('MainPage'),
         leadingWidth: 92.h,
@@ -80,14 +98,7 @@ class _MainPageState extends State<MainPage> {
                             width: 295.h,
                             child: Stack(
                                 alignment: Alignment.center,
-                                children: [
-                                  CustomImageView(
-                                      imagePath:
-                                      ImageConstant.imgPhoto450x231,
-                                      height: 450.v,
-                                      width: 231.h,
-                                      radius: BorderRadius.circular(15.h),
-                                      alignment: Alignment.topCenter),
+                                children: [:
                                   Align(
                                       alignment: Alignment.center,
                                       child: SizedBox(
@@ -275,7 +286,7 @@ class _MainPageState extends State<MainPage> {
               context, getCurrentRoute(type));
         },
       ),
-    );
+    ));
   }
 
   /// Navigates back to the previous screen.
